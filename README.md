@@ -1,141 +1,122 @@
-# Sideglass
+# Sideglass Zime 🇨🇳
 
 <p align="center">
-  <a href="./README.md">English</a> · <a href="./README.es.md">Español</a> · <a href="./README.zh.md">中文</a>
+  <strong>中文（默认）</strong> · <a href="./README.en.md">English</a> · <a href="./README.es.md">Español</a>
 </p>
 
 <p align="center">
-  <img src="public/screenshots/landscape-dark.png" alt="Sideglass — second-monitor dashboard for Windows" width="720" />
+  <img src="public/screenshots/landscape-dark.png" alt="Sideglass —— Windows 副屏仪表盘" width="720" />
 </p>
 
 <p align="center">
-  <strong>Source-available desktop app for Windows</strong> (Tauri + Next.js) — customizable secondary monitor dashboard: weather, calendar, hardware, notes, embedded YouTube, and AI dock.
+  <strong>Windows 桌面应用</strong>（Tauri + Next.js）—— 为国内用户打造的副屏仪表盘：天气、日历、硬件监控、笔记、Bilibili 视频、AI 应用面板，界面全中文。
 </p>
 
 <p align="center">
-  <a href="https://github.com/moisesvalero/sideglass-dashboard/releases/latest/download/Sideglass_x64-setup.exe">Download .exe</a>
+  <a href="https://github.com/Z2549/sideglass-dashboard/releases/tag/v0.2.36">⬇ 下载 v0.2.36（Windows x64 安装包）</a>
   ·
-  <a href="https://sideglass.moisesvalero.es">Landing</a>
+  <a href="https://github.com/Z2549/sideglass-dashboard">GitHub</a>
   ·
-  <a href="https://github.com/moisesvalero/sideglass-dashboard">GitHub</a>
-  ·
-  <a href="./CHANGELOG.md">Changelog</a>
-</p>
-
-<p align="center">
-  <a href="https://www.producthunt.com/products/sideglass?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-sideglass" target="_blank" rel="noopener noreferrer"><img alt="Sideglass - Stop using browser tabs for your daily workflow | Product Hunt" width="250" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1171679&amp;theme=light&amp;t=1781977293116"></a>
-</p>
-
-<p align="center">
-  If this project helps you, a <a href="https://github.com/moisesvalero/sideglass-dashboard">GitHub star</a> or issue/PR makes a real difference.
+  <a href="./CHANGELOG.md">更新日志</a>
 </p>
 
 ---
 
-## Screenshots
+## 🇨🇳 Zime 中国化特色
 
-| Portrait (dark)                                          | Portrait (light)                                           |
-| -------------------------------------------------------- | ---------------------------------------------------------- |
-| ![Portrait dark](./public/screenshots/portrait-dark.png) | ![Portrait light](./public/screenshots/portrait-light.png) |
+- **全界面中文**：时钟、天气、设置、主题、更新提示全部中文化；支持中文 / English / Español 三语切换，默认跟随系统语言
+- **每日一言改用中国经典**：内置 105 条《论语》、古诗词等中文名言（中英西三语对照），每日自动轮换
+- **AI 面板加入 12 个国内应用**：DeepSeek、智谱清言（GLM）、腾讯元宝、豆包、Kimi、通义千问、文心一言、讯飞星火、商汤 SenseChat、海螺 AI、天工 AI、秘塔 AI 搜索，全部使用官网官方 logo
+- **自定义 AI 面板**：设置中可隐藏任意 AI 应用；可一键调整整个面板大小（小 / 中 / 大）
+- **视频模块换成 Bilibili**：内置 Bilibili 搜索与播放，替代国内无法访问的 YouTube
+- **天气点击跳转国内网站**：点击天气卡片跳转百度天气搜索（非中文环境跳转 Google）
+- **日历中文化**：星期、月份、"今天"等全部中文显示；iCal 订阅兼容国内日历服务
+- **时钟中文显示**：上午 / 下午放在时间前面（如"上午 09:30"）
+- **主题选项随语言切换**：主题的三种选项在不同语言下显示对应文字
+- **窄窗口不再挤压**：低分辨率 / 窄窗口自动等比缩放，720p 副屏也能完整显示所有模块，无需滚动
+- **系统状态模块修复**：修复模块被遮挡、间距错乱，以及 RAM / DISK 高度与带温度模块不一致的问题
+- **国内可用的更新通道**：更新源指向本仓库 Zime 分支，GitHub Release + jsdelivr CDN 加速 + raw 备用，国内用户可直接检查并安装更新
 
-| Landscape (dark)                                           |
-| ---------------------------------------------------------- |
-| ![Landscape dark](./public/screenshots/landscape-dark.png) |
+## 功能特性
 
----
+- 时钟与天气（Open-Meteo 数据源，应用内请求，国内可直接使用，无需 API 密钥）
+- 通过 iCal 网址接入日历（兼容国内日历服务）
+- 实时 CPU、内存、GPU、主磁盘占用；内置传感器 / NVML 温度监控（管理员运行可显示温度）
+- **可拖拽调整大小的小组件**：拖动卡片边角保存任意尺寸，内容自适应缩放
+- **Bilibili 视频面板**：应用内直接搜索、播放
+- **AI 应用面板**：内置 18 个国内外 AI 应用，可自定义显示
+- 每日名言（105 条中文经典）、本地笔记、小组件自由排序
+- **Windows 风格标题栏**（右侧最小化 / 最大化 / 关闭）
+- 自动更新：**设置 → 检查更新**
+- 随 Windows 启动、全局快捷键、系统托盘
 
-## Features
+## 技术栈
 
-- Clock and weather (Open-Meteo, no API key)
-- Google Calendar via iCal URL
-- Live CPU, RAM, GPU, and primary disk usage; temperatures via bundled sensors / NVML
-- **Resizable responsive widgets**: drag the corner to any saved size; contents scale inside the card
-- **YouTube inside the panel** with real search in the Tauri app
-- AI dock (ChatGPT, Gemini, Claude, Perplexity, Microsoft Copilot)
-- Satoshi app typography, local notes, curated bilingual daily quotes, reorderable widgets
-- **Windows-style** title bar (minimize / maximize / close on the right)
-- Auto-update: **Settings → Check for updates**
-- Start with Windows, global hotkey, system tray
+| 层级   | 技术                                                    |
+| ------ | ------------------------------------------------------- |
+| UI     | Next.js 16, React 19, TypeScript, Tailwind v4           |
+| 桌面端 | Tauri v2（无边框窗口、托盘、签名更新器）                |
+| 原生   | Rust — sysinfo、WMI/LibreHardwareMonitor、NVML          |
 
-## Stack
+## 快速配置
 
-| Layer   | Tech                                              |
-| ------- | ------------------------------------------------- |
-| UI      | Next.js 16, React 19, TypeScript, Tailwind v4     |
-| Desktop | Tauri v2 (frameless window, tray, signed updater) |
-| Native  | Rust — sysinfo, WMI/LibreHardwareMonitor, NVML    |
+| 功能                        | 位置                                     |
+| --------------------------- | ---------------------------------------- |
+| 日历                        | 设置 → 日历 iCal 网址                    |
+| 调整小组件大小              | 顶栏 → 自定义按钮 → 拖动卡片边角         |
+| Bilibili                    | 视频小组件 → 应用内搜索                  |
+| 隐藏 / 显示 AI 应用、面板大小 | 设置 → AI 应用                           |
+| 温度显示                    | 安装包已内置；若 °C 未显示，以管理员身份运行 |
+| 更新                        | 设置 → **检查更新**                      |
+| 开机自启 / 快捷键           | 设置                                     |
 
-## Development
+## 开发
 
 ```bash
 pnpm install
-pnpm run dev          # Web preview http://localhost:3000
-pnpm run tauri:dev    # Desktop app
-pnpm run tauri:build  # Windows installer
+pnpm run dev          # Web 预览 http://localhost:3000
+pnpm run tauri:dev    # 桌面应用
+pnpm run tauri:build  # Windows 安装包
 ```
 
 ```bash
 pnpm run lint && pnpm run check && pnpm run build
 ```
 
-Regenerate marketing screenshots:
+重新生成营销截图：
 
 ```bash
 pnpm run screenshots
 ```
 
-Check private GitHub Release download counts:
+## 发布更新（Zime 分支）
 
 ```bash
-pnpm run stats:downloads
+# 1. 构建（需要签名密钥）
+export TAURI_SIGNING_PRIVATE_KEY="$(cat ~/.tauri/zime.key)"
+export TAURI_SIGNING_PRIVATE_KEY_PASSWORD="your password"
+pnpm run tauri:build
+
+# 2. 生成更新产物（zime-update/ 目录）
+node scripts/publish-zime-update.mjs
+
+# 3. 提交推送，并创建 GitHub Release（上传 latest.json、安装包与签名文件）
 ```
 
-Generate WinGet manifests for a release:
+应用通过 **设置 → 检查更新** 依次拉取 GitHub Release 资产（`releases/latest/download/latest.json`）、jsdelivr CDN、raw.githubusercontent，国内用户也可正常更新。
 
-```bash
-pnpm run winget:manifest -- --installer ./path/to/Sideglass_x64-setup.exe
-```
+## 开放源码
 
-See [docs/WINGET.md](docs/WINGET.md).
+Sideglass 以 PolyForm Noncommercial License 1.0.0 许可开放源码。商业使用、转售、再分发、白标、付费托管或竞争性商业分支需要获得原作者 Moises Valero 的书面许可。
 
-## Quick setup
+- [提交 issue](https://github.com/Z2549/sideglass-dashboard/issues)
+- 欢迎提交 Pull Request
 
-| Feature            | Where                                                       |
-| ------------------ | ----------------------------------------------------------- |
-| Calendar           | Settings → Google Calendar iCal URL                         |
-| Resize widgets     | Top bar → customize button → drag the card corner freely    |
-| YouTube            | YouTube widget → search in app or paste link in web preview |
-| Temperatures       | Bundled in installer; run as administrator if °C is missing |
-| Updates            | Settings → **Check for updates**                            |
-| Autostart / hotkey | Settings                                                    |
+## 贡献者
 
-## Changelog (website + repo)
+- [DeepSeek](https://deepseek.com) — 中文本地化与翻译、Zime 中国化功能
+- [Moises Valero](https://moisesvalero.es) — 原作者
 
-- **English:** [CHANGELOG.md](./CHANGELOG.md) — parsed on the landing at build time (`/en`)
-- **Spanish:** [CHANGELOG.es.md](./CHANGELOG.es.md) — parsed on the Spanish landing (`/`)
-
-Add the same `## [x.y.z] - date` section to **both** files when you ship a release.
-
-## Publish a release
-
-```bash
-git tag v0.2.4
-git push origin v0.2.4
-```
-
-GitHub Actions secrets: [docs/UPDATER.md](docs/UPDATER.md).
-
-## Source available
-
-Sideglass is source-available under the PolyForm Noncommercial License 1.0.0. Commercial use, resale, redistribution, white-labeling, paid hosting, or competing commercial forks require written permission from Moises Valero.
-
-- [Open an issue](https://github.com/moisesvalero/sideglass-dashboard/issues)
-- Pull requests welcome
-
-## Contributors
-
-- [DeepSeek](https://deepseek.com) — Chinese localization and translation
-
-## License
+## 许可证
 
 [PolyForm Noncommercial License 1.0.0](LICENSE) — Copyright (c) 2026 Moises Valero

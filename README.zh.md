@@ -1,7 +1,7 @@
-# Sideglass
+# Sideglass Zime 🇨🇳
 
 <p align="center">
-  <a href="./README.md">English</a> · <a href="./README.es.md">Español</a> · <a href="./README.zh.md">中文</a>
+  <strong>中文（默认）</strong> · <a href="./README.en.md">English</a> · <a href="./README.es.md">Español</a>
 </p>
 
 <p align="center">
@@ -9,53 +9,66 @@
 </p>
 
 <p align="center">
-  <strong>Windows 开放源码桌面应用</strong>（Tauri + Next.js）—— 可自定义的副屏仪表盘：天气、日历、硬件、笔记、内嵌 YouTube 和 AI 面板。
+  <strong>Windows 桌面应用</strong>（Tauri + Next.js）—— 为国内用户打造的副屏仪表盘：天气、日历、硬件监控、笔记、Bilibili 视频、AI 应用面板，界面全中文。
 </p>
 
 <p align="center">
-  <a href="https://github.com/moisesvalero/sideglass-dashboard/releases/latest/download/Sideglass_x64-setup.exe">下载 .exe</a>
+  <a href="https://github.com/Z2549/sideglass-dashboard/releases/tag/v0.2.36">⬇ 下载 v0.2.36（Windows x64 安装包）</a>
   ·
-  <a href="https://sideglass.moisesvalero.es">官网</a>
-  ·
-  <a href="https://github.com/moisesvalero/sideglass-dashboard">GitHub</a>
+  <a href="https://github.com/Z2549/sideglass-dashboard">GitHub</a>
   ·
   <a href="./CHANGELOG.md">更新日志</a>
 </p>
 
 ---
 
-## 截图
+## 🇨🇳 Zime 中国化特色
 
-| 竖屏（深色）                                             | 竖屏（浅色）                                              |
-| -------------------------------------------------------- | --------------------------------------------------------- |
-| ![竖屏深色](./public/screenshots/portrait-dark.png)       | ![竖屏浅色](./public/screenshots/portrait-light.png)      |
-
-| 横屏（深色）                                              |
-| --------------------------------------------------------- |
-| ![横屏深色](./public/screenshots/landscape-dark.png)      |
-
----
+- **全界面中文**：时钟、天气、设置、主题、更新提示全部中文化；支持中文 / English / Español 三语切换，默认跟随系统语言
+- **每日一言改用中国经典**：内置 105 条《论语》、古诗词等中文名言（中英西三语对照），每日自动轮换
+- **AI 面板加入 12 个国内应用**：DeepSeek、智谱清言（GLM）、腾讯元宝、豆包、Kimi、通义千问、文心一言、讯飞星火、商汤 SenseChat、海螺 AI、天工 AI、秘塔 AI 搜索，全部使用官网官方 logo
+- **自定义 AI 面板**：设置中可隐藏任意 AI 应用；可一键调整整个面板大小（小 / 中 / 大）
+- **视频模块换成 Bilibili**：内置 Bilibili 搜索与播放，替代国内无法访问的 YouTube
+- **天气点击跳转国内网站**：点击天气卡片跳转百度天气搜索（非中文环境跳转 Google）
+- **日历中文化**：星期、月份、"今天"等全部中文显示；iCal 订阅兼容国内日历服务
+- **时钟中文显示**：上午 / 下午放在时间前面（如"上午 09:30"）
+- **主题选项随语言切换**：主题的三种选项在不同语言下显示对应文字
+- **窄窗口不再挤压**：低分辨率 / 窄窗口自动等比缩放，720p 副屏也能完整显示所有模块，无需滚动
+- **系统状态模块修复**：修复模块被遮挡、间距错乱，以及 RAM / DISK 高度与带温度模块不一致的问题
+- **国内可用的更新通道**：更新源指向本仓库 Zime 分支，GitHub Release + jsdelivr CDN 加速 + raw 备用，国内用户可直接检查并安装更新
 
 ## 功能特性
 
-- 时钟和天气（Open-Meteo，无需 API 密钥）
-- 通过 iCal 网址接入 Google 日历
-- 实时 CPU、内存、GPU 和主磁盘使用率；通过内置传感器 / NVML 获取温度
-- **可调整大小、响应式的小组件**：拖动边角保存任意尺寸，卡片内容自适应缩放
-- **面板内嵌 YouTube**，桌面应用内支持真实搜索
-- AI 面板（ChatGPT、Gemini、Claude、Perplexity、Microsoft Copilot）
-- Satoshi 应用字体、本地笔记、每日精选双语名言、小组件可自由排序
+- 时钟与天气（Open-Meteo 数据源，应用内请求，国内可直接使用，无需 API 密钥）
+- 通过 iCal 网址接入日历（兼容国内日历服务）
+- 实时 CPU、内存、GPU、主磁盘占用；内置传感器 / NVML 温度监控（管理员运行可显示温度）
+- **可拖拽调整大小的小组件**：拖动卡片边角保存任意尺寸，内容自适应缩放
+- **Bilibili 视频面板**：应用内直接搜索、播放
+- **AI 应用面板**：内置 18 个国内外 AI 应用，可自定义显示
+- 每日名言（105 条中文经典）、本地笔记、小组件自由排序
 - **Windows 风格标题栏**（右侧最小化 / 最大化 / 关闭）
 - 自动更新：**设置 → 检查更新**
 - 随 Windows 启动、全局快捷键、系统托盘
 
 ## 技术栈
 
-| 层级     | 技术                                              |
-| -------- | ------------------------------------------------- |
-| UI       | Next.js 16, React 19, TypeScript, Tailwind v4     |
-| 桌面端   | Tauri v2（无边框窗口、托盘、签名更新器）          |
-| 原生     | Rust — sysinfo、WMI/LibreHardwareMonitor、NVML    |
+| 层级   | 技术                                                    |
+| ------ | ------------------------------------------------------- |
+| UI     | Next.js 16, React 19, TypeScript, Tailwind v4           |
+| 桌面端 | Tauri v2（无边框窗口、托盘、签名更新器）                |
+| 原生   | Rust — sysinfo、WMI/LibreHardwareMonitor、NVML          |
+
+## 快速配置
+
+| 功能                        | 位置                                     |
+| --------------------------- | ---------------------------------------- |
+| 日历                        | 设置 → 日历 iCal 网址                    |
+| 调整小组件大小              | 顶栏 → 自定义按钮 → 拖动卡片边角         |
+| Bilibili                    | 视频小组件 → 应用内搜索                  |
+| 隐藏 / 显示 AI 应用、面板大小 | 设置 → AI 应用                           |
+| 温度显示                    | 安装包已内置；若 °C 未显示，以管理员身份运行 |
+| 更新                        | 设置 → **检查更新**                      |
+| 开机自启 / 快捷键           | 设置                                     |
 
 ## 开发
 
@@ -76,53 +89,33 @@ pnpm run lint && pnpm run check && pnpm run build
 pnpm run screenshots
 ```
 
-查看 GitHub Release 私有下载量：
+## 发布更新（Zime 分支）
 
 ```bash
-pnpm run stats:downloads
+# 1. 构建（需要签名密钥）
+export TAURI_SIGNING_PRIVATE_KEY="$(cat ~/.tauri/zime.key)"
+export TAURI_SIGNING_PRIVATE_KEY_PASSWORD="your password"
+pnpm run tauri:build
+
+# 2. 生成更新产物（zime-update/ 目录）
+node scripts/publish-zime-update.mjs
+
+# 3. 提交推送，并创建 GitHub Release（上传 latest.json、安装包与签名文件）
 ```
 
-为某个版本生成 WinGet 清单：
-
-```bash
-pnpm run winget:manifest -- --installer ./path/to/Sideglass_x64-setup.exe
-```
-
-参见 [docs/WINGET.md](docs/WINGET.md)。
-
-## 快速配置
-
-| 功能                | 位置                                                         |
-| ------------------- | ------------------------------------------------------------ |
-| 日历                | 设置 → Google 日历 iCal 网址                                  |
-| 调整小组件大小      | 顶栏 → 自定义按钮 → 自由拖动卡片边角                          |
-| YouTube             | YouTube 小组件 → 应用内搜索，或在 Web 预览中粘贴链接           |
-| 温度显示            | 安装包已内置；若 °C 未显示，请以管理员身份运行                |
-| 更新                | 设置 → **检查更新**                                           |
-| 开机自启 / 快捷键   | 设置                                                          |
-
-## 更新日志（官网 + 仓库）
-
-- **英文：** [CHANGELOG.md](./CHANGELOG.md) — 构建时在落地页（`/en`）解析
-- **西班牙文：** [CHANGELOG.es.md](./CHANGELOG.es.md) — 在西班牙语落地页（`/`）解析
-
-发布新版本时，请在**两个**文件中添加相同的 `## [x.y.z] - date` 小节。
-
-## 发布版本
-
-```bash
-git tag v0.2.4
-git push origin v0.2.4
-```
-
-GitHub Actions 密钥：参见 [docs/UPDATER.md](docs/UPDATER.md)。
+应用通过 **设置 → 检查更新** 依次拉取 GitHub Release 资产（`releases/latest/download/latest.json`）、jsdelivr CDN、raw.githubusercontent，国内用户也可正常更新。
 
 ## 开放源码
 
-Sideglass 以 PolyForm Noncommercial License 1.0.0 许可开放源码。商业使用、转售、再分发、白标、付费托管或竞争性商业分支需要获得 Moises Valero 的书面许可。
+Sideglass 以 PolyForm Noncommercial License 1.0.0 许可开放源码。商业使用、转售、再分发、白标、付费托管或竞争性商业分支需要获得原作者 Moises Valero 的书面许可。
 
-- [提交 issue](https://github.com/moisesvalero/sideglass-dashboard/issues)
+- [提交 issue](https://github.com/Z2549/sideglass-dashboard/issues)
 - 欢迎提交 Pull Request
+
+## 贡献者
+
+- [DeepSeek](https://deepseek.com) — 中文本地化与翻译、Zime 中国化功能
+- [Moises Valero](https://moisesvalero.es) — 原作者
 
 ## 许可证
 

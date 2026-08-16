@@ -1,7 +1,7 @@
 # Sideglass
 
 <p align="center">
-  <a href="./README.md">English</a> · <a href="./README.es.md">Español</a> · <a href="./README.zh.md">中文</a>
+  <a href="./README.md">中文（默认）</a> · <a href="./README.en.md">English</a> · <strong>Español</strong>
 </p>
 
 <p align="center">
