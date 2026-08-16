@@ -1191,171 +1191,187 @@ async fn open_url(url: String) -> Result<(), String> {
 }
 
 #[derive(Serialize, Clone)]
-pub struct YoutubeResult {
+pub struct BilibiliResult {
     pub id: String,
     pub title: String,
     pub channel: String,
     pub thumbnail: String,
 }
 
-/// Extracts the first balanced JSON object starting at the beginning of `s`.
-fn extract_balanced_json(s: &str) -> Option<String> {
-    let bytes = s.as_bytes();
-    if bytes.first() != Some(&b'{') {
-        return None;
-    }
-    let mut depth = 0i32;
-    let mut in_string = false;
-    let mut escaped = false;
-    for (i, &b) in bytes.iter().enumerate() {
-        if in_string {
-            if escaped {
-                escaped = false;
-            } else if b == b'\\' {
-                escaped = true;
-            } else if b == b'"' {
-                in_string = false;
-            }
-            continue;
-        }
-        match b {
-            b'"' => in_string = true,
-            b'{' => depth += 1,
-            b'}' => {
-                depth -= 1;
-                if depth == 0 {
-                    return Some(s[..=i].to_string());
-                }
-            }
+/// Mixin-key permutation table used by Bilibili's wbi signature.
+const WBI_MIXIN_KEY_TABLE: [u8; 64] = [
+    46, 47, 18, 2, 53, 8, 23, 32, 15, 50, 10, 31, 58, 3, 45, 35, 27, 43, 5, 49, 33, 9, 42, 19, 29,
+    28, 14, 39, 12, 38, 41, 13, 37, 48, 7, 16, 24, 55, 40, 61, 26, 17, 0, 1, 60, 51, 30, 4, 22,
+    25, 54, 21, 56, 59, 6, 63, 57, 62, 11, 36, 20, 34, 44, 52,
+];
+
+fn wbi_mixin_key(orig: &str) -> String {
+    let chars: Vec<char> = orig.chars().collect();
+    WBI_MIXIN_KEY_TABLE
+        .iter()
+        .filter_map(|&idx| chars.get(idx as usize))
+        .take(32)
+        .collect()
+}
+
+fn strip_html_tags(input: &str) -> String {
+    let mut out = String::with_capacity(input.len());
+    let mut in_tag = false;
+    for ch in input.chars() {
+        match ch {
+            '<' => in_tag = true,
+            '>' => in_tag = false,
+            _ if !in_tag => out.push(ch),
             _ => {}
         }
     }
-    None
+    out.replace("&amp;", "&")
+        .replace("&quot;", "\"")
+        .trim()
+        .to_string()
 }
 
-fn extract_yt_initial_data(html: &str) -> Option<String> {
-    for marker in ["var ytInitialData = ", "ytInitialData = "] {
-        if let Some(start) = html.find(marker) {
-            let rest = &html[start + marker.len()..];
-            if let Some(obj) = extract_balanced_json(rest) {
-                return Some(obj);
+async fn bilibili_wbi_keys(client: &reqwest::Client) -> Option<String> {
+    let resp = client
+        .get("https://api.bilibili.com/x/web-interface/nav")
+        .send()
+        .await
+        .ok()?;
+    let json: serde_json::Value =
+        serde_json::from_str(&resp.text().await.ok()?).ok()?;
+    let img = json.pointer("/data/wbi_img/img_url")?.as_str()?;
+    let sub = json.pointer("/data/wbi_img/sub_url")?.as_str()?;
+    let key = |url: &str| -> String {
+        url.rsplit('/')
+            .next()
+            .unwrap_or("")
+            .split('.')
+            .next()
+            .unwrap_or("")
+            .to_string()
+    };
+    Some(wbi_mixin_key(&format!("{}{}", key(img), key(sub))))
+}
+
+fn wbi_sign(params: &mut Vec<(String, String)>, mixin_key: &str) {
+    params.push(("wts".to_string(), chrono_utc_now().to_string()));
+    params.sort();
+    let query = params
+        .iter()
+        .map(|(k, v)| format!("{k}={v}"))
+        .collect::<Vec<_>>()
+        .join("&");
+    use md5::{Digest as Md5Digest, Md5};
+    let mut hasher = Md5::new();
+    hasher.update(format!("{query}{mixin_key}"));
+    let w_rid = format!("{:x}", hasher.finalize());
+    params.push(("w_rid".to_string(), w_rid));
+}
+
+fn chrono_utc_now() -> i64 {
+    std::time::SystemTime::now()
+        .duration_since(std::time::UNIX_EPOCH)
+        .map(|d| d.as_secs() as i64)
+        .unwrap_or(0)
+}
+
+fn parse_bilibili_results(json: &serde_json::Value) -> Vec<BilibiliResult> {
+    let mut out = Vec::new();
+    if let Some(results) = json.pointer("/data/result").and_then(|r| r.as_array()) {
+        for item in results {
+            let id = item.get("bvid").and_then(|v| v.as_str()).unwrap_or("");
+            if id.is_empty() || out.iter().any(|r: &BilibiliResult| r.id == id) {
+                continue;
+            }
+            let title = strip_html_tags(item.get("title").and_then(|v| v.as_str()).unwrap_or(""));
+            if title.is_empty() {
+                continue;
+            }
+            let pic = item.get("pic").and_then(|v| v.as_str()).unwrap_or("");
+            let thumbnail = if pic.is_empty() {
+                String::new()
+            } else if pic.starts_with("//") {
+                format!("https:{pic}")
+            } else {
+                pic.to_string()
+            };
+            out.push(BilibiliResult {
+                id: id.to_string(),
+                title,
+                channel: item
+                    .get("author")
+                    .and_then(|v| v.as_str())
+                    .unwrap_or("")
+                    .to_string(),
+                thumbnail,
+            });
+            if out.len() >= 12 {
+                break;
             }
         }
     }
-    None
-}
-
-fn parse_video_renderer(vr: &serde_json::Value) -> Option<YoutubeResult> {
-    let id = vr.get("videoId")?.as_str()?.to_string();
-    if id.is_empty() {
-        return None;
-    }
-
-    let title = vr
-        .get("title")
-        .and_then(|t| t.get("runs"))
-        .and_then(|r| r.get(0))
-        .and_then(|r| r.get("text"))
-        .and_then(|t| t.as_str())
-        .or_else(|| {
-            vr.get("title")
-                .and_then(|t| t.get("simpleText"))
-                .and_then(|t| t.as_str())
-        })
-        .unwrap_or("")
-        .to_string();
-    if title.is_empty() {
-        return None;
-    }
-
-    let channel = vr
-        .get("ownerText")
-        .and_then(|o| o.get("runs"))
-        .and_then(|r| r.get(0))
-        .and_then(|r| r.get("text"))
-        .and_then(|t| t.as_str())
-        .or_else(|| {
-            vr.get("longBylineText")
-                .and_then(|o| o.get("runs"))
-                .and_then(|r| r.get(0))
-                .and_then(|r| r.get("text"))
-                .and_then(|t| t.as_str())
-        })
-        .unwrap_or("")
-        .to_string();
-
-    Some(YoutubeResult {
-        thumbnail: format!("https://i.ytimg.com/vi/{id}/mqdefault.jpg"),
-        id,
-        title,
-        channel,
-    })
-}
-
-fn collect_video_renderers(value: &serde_json::Value, out: &mut Vec<YoutubeResult>) {
-    if out.len() >= 12 {
-        return;
-    }
-    match value {
-        serde_json::Value::Object(map) => {
-            if let Some(vr) = map.get("videoRenderer") {
-                if let Some(result) = parse_video_renderer(vr) {
-                    if !out.iter().any(|r| r.id == result.id) {
-                        out.push(result);
-                    }
-                }
-            }
-            for v in map.values() {
-                collect_video_renderers(v, out);
-            }
-        }
-        serde_json::Value::Array(arr) => {
-            for v in arr {
-                collect_video_renderers(v, out);
-            }
-        }
-        _ => {}
-    }
+    out
 }
 
 #[tauri::command]
-async fn youtube_search(query: String) -> Result<Vec<YoutubeResult>, String> {
+async fn bilibili_search(query: String) -> Result<Vec<BilibiliResult>, String> {
     let q = query.trim();
     if q.is_empty() {
         return Ok(vec![]);
     }
 
-    let url =
-        reqwest::Url::parse_with_params("https://www.youtube.com/results", &[("search_query", q)])
-            .map_err(|e| e.to_string())?;
-
     let client = reqwest::Client::builder()
         .timeout(std::time::Duration::from_secs(15))
         .user_agent(
             "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 \
-             (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+             (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
         )
         .build()
         .map_err(|e| e.to_string())?;
 
-    let html = client
-        .get(url)
-        .header("Accept-Language", "es-ES,es;q=0.9,en;q=0.8")
-        .header("Cookie", "CONSENT=YES+cb")
+    let mut params = vec![
+        ("search_type".to_string(), "video".to_string()),
+        ("keyword".to_string(), q.to_string()),
+        ("page".to_string(), "1".to_string()),
+        ("page_size".to_string(), "12".to_string()),
+    ];
+
+    // Try the wbi-signed endpoint first; fall back to the legacy endpoint if signing fails.
+    let mixin_key = bilibili_wbi_keys(&client).await;
+    if let Some(key) = &mixin_key {
+        wbi_sign(&mut params, key);
+        let url = "https://api.bilibili.com/x/web-interface/wbi/search/type";
+        if let Ok(resp) = client.get(url).query(&params).send().await {
+            if let Ok(text) = resp.text().await {
+                if let Ok(json) = serde_json::from_str::<serde_json::Value>(&text) {
+                    let results = parse_bilibili_results(&json);
+                    if !results.is_empty() {
+                        return Ok(results);
+                    }
+                }
+            }
+        }
+    }
+
+    let fallback_params: Vec<(String, String)> = params
+        .iter()
+        .filter(|(k, _)| k != "w_rid" && k != "wts")
+        .cloned()
+        .collect();
+    let resp = client
+        .get("https://api.bilibili.com/x/web-interface/search/type")
+        .query(&fallback_params)
         .send()
         .await
-        .map_err(|e| e.to_string())?
-        .text()
-        .await
         .map_err(|e| e.to_string())?;
-
-    let json = extract_yt_initial_data(&html).ok_or("No se pudo leer la respuesta de YouTube")?;
-    let data: serde_json::Value = serde_json::from_str(&json).map_err(|e| e.to_string())?;
-
-    let mut results = Vec::new();
-    collect_video_renderers(&data, &mut results);
-    results.truncate(12);
-    Ok(results)
+    let text = resp.text().await.map_err(|e| e.to_string())?;
+    let json: serde_json::Value = serde_json::from_str(&text).map_err(|e| e.to_string())?;
+    let results = parse_bilibili_results(&json);
+    if results.is_empty() {
+        Err("No se pudo leer la respuesta de Bilibili".to_string())
+    } else {
+        Ok(results)
+    }
 }
 
 #[tauri::command]
@@ -1964,7 +1980,7 @@ fn main() {
             get_system_info,
             fetch_ical,
             open_url,
-            youtube_search,
+            bilibili_search,
             toggle_main_window,
             set_autostart,
             register_global_hotkey,

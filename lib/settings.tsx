@@ -98,6 +98,10 @@ export interface Settings {
   showNotes: boolean
   showMusic: boolean
   showAi: boolean
+  /** AI dock apps the user wants to hide (ids from lib/ai-apps.ts). */
+  hiddenAiApps: string[]
+  /** AI dock icon size. */
+  aiDockSize: "sm" | "md" | "lg"
   autostart: boolean
   globalHotkey: string
   calendarNotifications: boolean
@@ -118,6 +122,8 @@ const defaultSettings: Settings = {
   showNotes: true,
   showMusic: true,
   showAi: true,
+  hiddenAiApps: [],
+  aiDockSize: "md",
   autostart: false,
   globalHotkey: "CommandOrControl+Shift+D",
   calendarNotifications: true,
@@ -166,6 +172,12 @@ function migrateStored(raw: Record<string, unknown>): Settings {
   }
   if (next.showAi === undefined) {
     next.showAi = true
+  }
+  if (!Array.isArray(next.hiddenAiApps)) {
+    next.hiddenAiApps = []
+  }
+  if (next.aiDockSize !== "sm" && next.aiDockSize !== "md" && next.aiDockSize !== "lg") {
+    next.aiDockSize = "md"
   }
   const defaultLayouts = getDefaultWidgetLayouts()
   const rawLayouts =

@@ -20,12 +20,15 @@ import {
   Info,
   Github,
   ExternalLink,
+  LayoutGrid,
 } from "lucide-react"
 import { useSettings, type Settings } from "@/lib/settings"
 import { useI18n } from "@/lib/i18n"
 import { APP_NAME, APP_VERSION, GITHUB_REPO, SITE_URL } from "@/lib/site"
 import { isTauri, openExternalUrl } from "@/lib/tauri"
 import { useUpdater } from "@/lib/updater"
+import { AI_APPS } from "@/lib/ai-apps"
+import { AiBrandIcon, resolveAiIconSrc } from "@/components/icons/ai-brand-icon"
 import { CityAutocomplete } from "@/components/dashboard/city-autocomplete"
 
 interface Props {
@@ -34,9 +37,21 @@ interface Props {
 }
 
 const themes = [
-  { key: "dark" as const, icon: Moon, label: "Oscuro" },
-  { key: "light" as const, icon: Sun, label: "Claro" },
-  { key: "system" as const, icon: Monitor, label: "Sistema" },
+  { key: "dark" as const, icon: Moon },
+  { key: "light" as const, icon: Sun },
+  { key: "system" as const, icon: Monitor },
+]
+
+const themeLabels: Record<(typeof themes)[number]["key"], string> = {
+  dark: "settings.themeDark",
+  light: "settings.themeLight",
+  system: "settings.themeSystem",
+}
+
+const aiSizes = [
+  { key: "sm" as const, label: "settings.aiSizeSmall" },
+  { key: "md" as const, label: "settings.aiSizeMedium" },
+  { key: "lg" as const, label: "settings.aiSizeLarge" },
 ]
 
 export function SettingsDrawer({ open, onClose }: Props) {
@@ -44,8 +59,20 @@ export function SettingsDrawer({ open, onClose }: Props) {
   const { t, lang, setLang } = useI18n()
   const { status: updateState, check } = useUpdater()
   const inTauri = isTauri()
+  const isDark =
+    settings.theme === "dark" ||
+    (settings.theme === "system" &&
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches)
 
   if (!open) return null
+
+  const toggleAiApp = (id: string) => {
+    const hidden = settings.hiddenAiApps.includes(id)
+      ? settings.hiddenAiApps.filter((appId) => appId !== id)
+      : [...settings.hiddenAiApps, id]
+    updateSettings({ hiddenAiApps: hidden })
+  }
 
   const updateBusy = updateState === "checking"
   const updateStatus =
@@ -68,7 +95,7 @@ export function SettingsDrawer({ open, onClose }: Props) {
     }
   }
 
-  const faqUrl = `${SITE_URL}${lang === "es" ? "/#faq" : "/en#faq"}`
+  const faqUrl = `${SITE_URL}${lang === "es" ? "/#faq" : lang === "zh" ? "/zh#faq" : "/en#faq"}`
 
   return (
     <>
@@ -81,7 +108,7 @@ export function SettingsDrawer({ open, onClose }: Props) {
               type="button"
               onClick={onClose}
               className="dashboard-control flex h-8 w-8 items-center justify-center hover:bg-muted/70"
-              aria-label="Cerrar"
+              aria-label={t("titlebar.close")}
             >
               <X className="w-4 h-4 text-muted-foreground" />
             </button>
@@ -91,10 +118,10 @@ export function SettingsDrawer({ open, onClose }: Props) {
             <section>
               <label className="flex items-center gap-2 text-muted-foreground text-xs font-medium uppercase tracking-wider mb-2">
                 <Sun className="w-3.5 h-3.5" />
-                Tema
+                {t("settings.theme")}
               </label>
               <div className="flex flex-wrap gap-2">
-                {themes.map(({ key, icon: Icon, label }) => (
+                {themes.map(({ key, icon: Icon }) => (
                   <button
                     key={key}
                     type="button"
@@ -106,7 +133,7 @@ export function SettingsDrawer({ open, onClose }: Props) {
                     }`}
                   >
                     <Icon className="w-3.5 h-3.5" />
-                    {label}
+                    {t(themeLabels[key])}
                   </button>
                 ))}
               </div>
@@ -212,7 +239,7 @@ export function SettingsDrawer({ open, onClose }: Props) {
             <section className="md:col-span-2">
               <label className="flex items-center gap-2 text-muted-foreground text-xs font-medium uppercase tracking-wider mb-2">
                 <Calendar className="w-3.5 h-3.5" />
-                Google Calendar (iCal)
+                {t("settings.calendarIcal")}
               </label>
               <p className="text-muted-foreground text-xs mb-2 leading-relaxed">
                 {t("calendar.icalHint")}
@@ -318,6 +345,62 @@ export function SettingsDrawer({ open, onClose }: Props) {
                     ) : (
                       <EyeOff className="w-4 h-4 text-muted-foreground/50" />
                     )}
+                  </button>
+                ))}
+              </div>
+            </section>
+
+            <section className="md:col-span-2">
+              <label className="flex items-center gap-2 text-muted-foreground text-xs font-medium uppercase tracking-wider mb-2">
+                <Eye className="w-3.5 h-3.5" />
+                {t("settings.aiApps")}
+              </label>
+              <div className="grid gap-1.5 sm:grid-cols-2">
+                {AI_APPS.map((app) => {
+                  const visible = !settings.hiddenAiApps.includes(app.id)
+                  return (
+                    <button
+                      key={app.id}
+                      type="button"
+                      onClick={() => toggleAiApp(app.id)}
+                      className="dashboard-control flex w-full items-center justify-between gap-2 px-3 py-2 hover:bg-muted/70"
+                    >
+                      <span className="flex min-w-0 items-center gap-2 text-foreground/90 text-sm">
+                        <AiBrandIcon
+                          src={resolveAiIconSrc(app.icon, isDark)}
+                          className="h-4 w-4 object-contain"
+                        />
+                        <span className="truncate">{app.name}</span>
+                      </span>
+                      {visible ? (
+                        <Eye className="w-4 h-4 shrink-0 text-emerald-500" />
+                      ) : (
+                        <EyeOff className="w-4 h-4 shrink-0 text-muted-foreground/50" />
+                      )}
+                    </button>
+                  )
+                })}
+              </div>
+            </section>
+
+            <section>
+              <label className="flex items-center gap-2 text-muted-foreground text-xs font-medium uppercase tracking-wider mb-2">
+                <LayoutGrid className="w-3.5 h-3.5" />
+                {t("settings.aiSize")}
+              </label>
+              <div className="flex gap-2">
+                {aiSizes.map(({ key, label }) => (
+                  <button
+                    key={key}
+                    type="button"
+                    onClick={() => updateSettings({ aiDockSize: key })}
+                    className={`rounded-full px-4 py-2 text-xs ${
+                      settings.aiDockSize === key
+                        ? "bg-primary text-primary-foreground"
+                        : "dashboard-control text-muted-foreground hover:bg-muted/70"
+                    }`}
+                  >
+                    {t(label)}
                   </button>
                 ))}
               </div>

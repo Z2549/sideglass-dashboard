@@ -31,15 +31,16 @@
       }
     ],
     "security": {
-      "csp": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self' data:; connect-src 'self' ipc: http://ipc.localhost https://api.open-meteo.com https://geocoding-api.open-meteo.com; frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'"
+      "csp": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self' data:; connect-src 'self' ipc: http://ipc.localhost https://api.open-meteo.com https://geocoding-api.open-meteo.com; frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com https://player.bilibili.com; object-src 'none'; base-uri 'self'"
     }
   },
   "plugins": {
     "updater": {
       "endpoints": [
-        "https://github.com/moisesvalero/sideglass-dashboard/releases/latest/download/latest.json"
+        "https://cdn.jsdelivr.net/gh/Z2549/sideglass-dashboard@Zime/latest.json",
+        "https://raw.githubusercontent.com/Z2549/sideglass-dashboard/Zime/latest.json"
       ],
-      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEQ1ODRFRDU0RTlCRUUzMDcKUldRSDQ3N3BWTzJFMWJ4SVhveFZEdlR2VnpBN0l5Qm5JR1hpYTRDLzNmV1ZIMEJNZzM0RFd1NVIK"
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDYxQjVEODQ3MTIyQzdBOQpSV1NweHlKeGhGMGJCaG8zbXM4dWlYYUkzR1NzQ0c5VTAvbmFLQk9CREZZZkszN1pDTElVZnlWVQo="
     }
   },
   "bundle": {

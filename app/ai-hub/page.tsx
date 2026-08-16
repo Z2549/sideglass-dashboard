@@ -12,6 +12,7 @@ import {
   takeAiHubPendingTab,
 } from "@/lib/tauri"
 import { APP_VERSION } from "@/lib/site"
+import { useI18n } from "@/lib/i18n"
 import { Minus, Square, X } from "lucide-react"
 
 function useIsDarkUi() {
@@ -46,6 +47,7 @@ function AIHubContent() {
   const [webviewError, setWebviewError] = useState<string | null>(null)
   const [webviewLoading, setWebviewLoading] = useState(false)
   const isDark = useIsDarkUi()
+  const { t } = useI18n()
 
   const loadInFlight = useRef(false)
   const pendingTab = useRef<string | null>(null)
@@ -201,7 +203,7 @@ function AIHubContent() {
       >
         <div data-tauri-drag-region className="flex min-w-0 shrink-0 items-center gap-2 px-4">
           <span className="truncate text-[13px] font-semibold leading-none text-foreground/80">
-            AI Hub
+            {t("ai.title")}
           </span>
         </div>
 
@@ -212,8 +214,8 @@ function AIHubContent() {
             type="button"
             onClick={() => handleWindowAction("minimize")}
             className="win-caption-btn w-12 flex items-center justify-center cursor-pointer"
-            aria-label="Minimizar"
-            title="Minimizar"
+            aria-label={t("titlebar.minimize")}
+            title={t("titlebar.minimize")}
           >
             <Minus className="h-3.5 w-3.5 text-foreground" strokeWidth={2} />
           </button>
@@ -221,8 +223,8 @@ function AIHubContent() {
             type="button"
             onClick={() => handleWindowAction("maximize")}
             className="win-caption-btn w-12 flex items-center justify-center cursor-pointer"
-            aria-label="Maximizar"
-            title="Maximizar"
+            aria-label={t("titlebar.maximize")}
+            title={t("titlebar.maximize")}
           >
             <Square className="h-3 w-3 text-foreground" strokeWidth={2} />
           </button>
@@ -230,8 +232,8 @@ function AIHubContent() {
             type="button"
             onClick={() => handleWindowAction("close")}
             className="win-caption-btn win-caption-close w-12 flex items-center justify-center cursor-pointer"
-            aria-label="Cerrar"
-            title="Cerrar"
+            aria-label={t("titlebar.close")}
+            title={t("titlebar.close")}
           >
             <X className="h-4 w-4 text-foreground" strokeWidth={2} />
           </button>
@@ -273,14 +275,12 @@ function AIHubContent() {
         <section className="relative flex-1 h-full bg-transparent">
           {webviewLoading && !webviewError && (
             <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-background/40 p-6 text-center backdrop-blur-[2px]">
-              <p className="text-sm text-muted-foreground">Cargando plataforma…</p>
+              <p className="text-sm text-muted-foreground">{t("ai.hubLoading")}</p>
             </div>
           )}
           {webviewError && (
             <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 bg-background/80 p-6 text-center backdrop-blur-sm">
-              <p className="max-w-sm text-sm font-medium text-destructive">
-                No se pudo cargar el panel de IA
-              </p>
+              <p className="max-w-sm text-sm font-medium text-destructive">{t("ai.hubError")}</p>
               <p className="max-w-md text-xs text-muted-foreground">{webviewError}</p>
               <button
                 type="button"
@@ -290,7 +290,7 @@ function AIHubContent() {
                 }}
                 className="rounded-lg border border-border bg-muted/50 px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted"
               >
-                Reintentar
+                {t("ai.retry")}
               </button>
             </div>
           )}

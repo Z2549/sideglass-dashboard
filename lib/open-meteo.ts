@@ -9,26 +9,78 @@ export interface WeatherResult {
   longitude: number
 }
 
-const WMO_LABELS: Record<number, string> = {
-  0: "Despejado",
-  1: "Mayormente despejado",
-  2: "Parcialmente nublado",
-  3: "Nublado",
-  45: "Niebla",
-  48: "Niebla",
-  51: "Llovizna",
-  53: "Llovizna",
-  55: "Llovizna",
-  61: "Lluvia",
-  63: "Lluvia",
-  65: "Lluvia fuerte",
-  71: "Nieve",
-  73: "Nieve",
-  75: "Nieve fuerte",
-  80: "Chubascos",
-  81: "Chubascos",
-  82: "Chubascos fuertes",
-  95: "Tormenta",
+export type WeatherLang = "es" | "en" | "zh"
+
+const WMO_LABELS: Record<WeatherLang, Record<number, string>> = {
+  es: {
+    0: "Despejado",
+    1: "Mayormente despejado",
+    2: "Parcialmente nublado",
+    3: "Nublado",
+    45: "Niebla",
+    48: "Niebla",
+    51: "Llovizna",
+    53: "Llovizna",
+    55: "Llovizna",
+    61: "Lluvia",
+    63: "Lluvia",
+    65: "Lluvia fuerte",
+    71: "Nieve",
+    73: "Nieve",
+    75: "Nieve fuerte",
+    80: "Chubascos",
+    81: "Chubascos",
+    82: "Chubascos fuertes",
+    95: "Tormenta",
+  },
+  en: {
+    0: "Clear",
+    1: "Mostly clear",
+    2: "Partly cloudy",
+    3: "Overcast",
+    45: "Fog",
+    48: "Fog",
+    51: "Drizzle",
+    53: "Drizzle",
+    55: "Drizzle",
+    61: "Rain",
+    63: "Rain",
+    65: "Heavy rain",
+    71: "Snow",
+    73: "Snow",
+    75: "Heavy snow",
+    80: "Showers",
+    81: "Showers",
+    82: "Heavy showers",
+    95: "Thunderstorm",
+  },
+  zh: {
+    0: "晴",
+    1: "大部晴朗",
+    2: "局部多云",
+    3: "阴",
+    45: "雾",
+    48: "雾",
+    51: "毛毛雨",
+    53: "毛毛雨",
+    55: "毛毛雨",
+    61: "雨",
+    63: "雨",
+    65: "大雨",
+    71: "雪",
+    73: "雪",
+    75: "大雪",
+    80: "阵雨",
+    81: "阵雨",
+    82: "强阵雨",
+    95: "雷暴",
+  },
+}
+
+const UNKNOWN_LABEL: Record<WeatherLang, string> = {
+  es: "Desconocido",
+  en: "Unknown",
+  zh: "未知",
 }
 
 export function wmoToOpenWeatherIcon(code: number): string {
@@ -129,13 +181,16 @@ export async function searchCities(
   }
 }
 
-async function geocode(city: string): Promise<{ lat: number; lon: number; name: string } | null> {
+async function geocode(
+  city: string,
+  lang: WeatherLang
+): Promise<{ lat: number; lon: number; name: string } | null> {
   const trimmed = city.trim()
   const primaryName = trimmed.split(",")[0]?.trim() || trimmed
   if (primaryName.length < 2) return null
 
   const data = await fetchJson<{ results?: GeocodingResult[] }>(
-    `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(primaryName)}&count=10&language=es&format=json`
+    `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(primaryName)}&count=10&language=${lang}&format=json`
   )
   const results = Array.isArray(data?.results) ? data.results : []
   const desiredTokens = cityTokens(trimmed).slice(1)
@@ -153,9 +208,9 @@ async function geocode(city: string): Promise<{ lat: number; lon: number; name: 
   return { lat: r.latitude, lon: r.longitude, name: r.name }
 }
 
-async function reverseGeocode(lat: number, lon: number): Promise<string | null> {
+async function reverseGeocode(lat: number, lon: number, lang: WeatherLang): Promise<string | null> {
   const data = await fetchJson<{ results?: { name?: string }[] }>(
-    `https://geocoding-api.open-meteo.com/v1/reverse?latitude=${lat}&longitude=${lon}&language=es`
+    `https://geocoding-api.open-meteo.com/v1/reverse?latitude=${lat}&longitude=${lon}&language=${lang}`
   )
   return data?.results?.[0]?.name ?? null
 }
@@ -178,7 +233,9 @@ export async function fetchWeather(options: {
   city: string
   useAutoLocation: boolean
   tempUnit: "celsius" | "fahrenheit"
+  lang?: WeatherLang
 }): Promise<WeatherResult> {
+  const lang = options.lang ?? "es"
   let lat: number
   let lon: number
   let cityName = options.city.trim() || "Madrid"
@@ -191,17 +248,17 @@ export async function fetchWeather(options: {
       }
       lat = pos.coords.latitude
       lon = pos.coords.longitude
-      const rev = await reverseGeocode(lat, lon)
+      const rev = await reverseGeocode(lat, lon, lang)
       if (rev) cityName = rev
     } catch (error) {
-      const geo = await geocode(cityName)
+      const geo = await geocode(cityName, lang)
       if (!geo) throw error
       lat = geo.lat
       lon = geo.lon
       cityName = geo.name
     }
   } else {
-    const geo = await geocode(cityName)
+    const geo = await geocode(cityName, lang)
     if (!geo) throw new Error("Geocoding failed")
     lat = geo.lat
     lon = geo.lon
@@ -226,7 +283,7 @@ export async function fetchWeather(options: {
 
   return {
     temp: Math.round(c.temperature_2m),
-    condition: WMO_LABELS[code] ?? "Desconocido",
+    condition: WMO_LABELS[lang][code] ?? UNKNOWN_LABEL[lang],
     iconCode: code,
     city: cityName,
     humidity: c.relative_humidity_2m,

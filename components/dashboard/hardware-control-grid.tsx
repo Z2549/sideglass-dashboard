@@ -42,7 +42,12 @@ function MetricTile({ sensor, primary, secondary, footer }: TileProps) {
           style={{ width: `${Math.min(100, Math.max(0, sensor.value))}%` }}
         />
       </div>
-      {footer ? <div className="mt-2">{footer}</div> : null}
+      {footer ? (
+        <div className="mt-2">{footer}</div>
+      ) : (
+        /* Keep tiles without a temperature chip the same height as tiles with one */
+        <div className="mt-2 h-[1.4rem]" aria-hidden />
+      )}
     </div>
   )
 }

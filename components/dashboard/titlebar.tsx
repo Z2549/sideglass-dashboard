@@ -21,7 +21,7 @@ export function Titlebar({
   const { t, lang } = useI18n()
 
   const handleHelp = () => {
-    const faqUrl = `${SITE_URL}${lang === "es" ? "/#faq" : "/en#faq"}`
+    const faqUrl = `${SITE_URL}${lang === "es" ? "/#faq" : lang === "zh" ? "/zh#faq" : "/en#faq"}`
     void openExternalUrl(faqUrl)
   }
 

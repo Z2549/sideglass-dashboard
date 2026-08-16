@@ -37,18 +37,31 @@ export function CalendarWidget() {
   const { settings } = useSettings()
 
   const icalUrl = settings.calendarIcalUrl?.trim() || ""
-  const locale = lang === "es" ? "es-ES" : "en-US"
+  const locale = lang === "es" ? "es-ES" : lang === "zh" ? "zh-CN" : "en-US"
+
+  /** Opens the calendar provider behind the iCal URL (or Google Calendar when no URL is set). */
+  const openCalendarProvider = () => {
+    try {
+      if (icalUrl) {
+        void openExternalUrl(new URL(icalUrl).origin)
+        return
+      }
+    } catch {
+      /* fall through to default */
+    }
+    void openExternalUrl(GOOGLE_CALENDAR_URL)
+  }
 
   const formatDate = useCallback(
     (d: Date) => {
       const now = new Date()
       const tomorrow = new Date(now)
       tomorrow.setDate(tomorrow.getDate() + 1)
-      if (d.toDateString() === now.toDateString()) return lang === "es" ? "Hoy" : "Today"
-      if (d.toDateString() === tomorrow.toDateString()) return lang === "es" ? "Mañana" : "Tomorrow"
+      if (d.toDateString() === now.toDateString()) return t("calendar.today")
+      if (d.toDateString() === tomorrow.toDateString()) return t("calendar.tomorrow")
       return d.toLocaleDateString(locale, { weekday: "short", day: "numeric", month: "short" })
     },
-    [lang, locale]
+    [lang, locale, t]
   )
 
   const fetchCalendarEvents = useCallback(async () => {
@@ -99,9 +112,9 @@ export function CalendarWidget() {
         <div className="dashboard-widget-header mb-3">
           <button
             type="button"
-            onClick={() => void openExternalUrl(GOOGLE_CALENDAR_URL)}
+            onClick={openCalendarProvider}
             className="dashboard-widget-title dashboard-widget-title-link"
-            title="Google Calendar"
+            title={icalUrl ? new URL(icalUrl).hostname : "Google Calendar"}
           >
             <Calendar className="h-4 w-4 text-muted-foreground" />
             <span>{t("calendar.schedule")}</span>
@@ -124,9 +137,9 @@ export function CalendarWidget() {
       <div className="dashboard-widget-header mb-3">
         <button
           type="button"
-          onClick={() => void openExternalUrl(GOOGLE_CALENDAR_URL)}
+          onClick={openCalendarProvider}
           className="dashboard-widget-title dashboard-widget-title-link"
-          title="Google Calendar"
+          title={icalUrl ? new URL(icalUrl).hostname : "Google Calendar"}
         >
           <Calendar className="h-4 w-4 text-muted-foreground" />
           <span>{t("calendar.schedule")}</span>

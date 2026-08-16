@@ -1,18 +1,26 @@
 "use client"
 
 import { useState, type DragEvent } from "react"
-import { Youtube, X, Search, Loader2, Link2 } from "lucide-react"
+import { X, Search, Loader2, Link2 } from "lucide-react"
 import { useI18n } from "@/lib/i18n"
-import { isTauri, openExternalUrl, youtubeSearch, type YoutubeResult } from "@/lib/tauri"
+import { isTauri, openExternalUrl, bilibiliSearch, type BilibiliResult } from "@/lib/tauri"
 
-function extractVideoId(value: string): string | null {
-  const patterns = [
-    /(?:v=|\/)([\w-]{11})(?:[?&]|$)/,
-    /youtu\.be\/([\w-]{11})/,
-    /embed\/([\w-]{11})/,
-    /shorts\/([\w-]{11})/,
-    /live\/([\w-]{11})/,
-  ]
+function BilibiliIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden>
+      <path
+        d="M17.813 4.653h.854c1.51.054 2.769.578 3.773 1.574 1.004.995 1.524 2.249 1.56 3.76v7.36c-.036 1.51-.556 2.764-1.56 3.76-1.004.995-2.264 1.52-3.773 1.573H5.333c-1.51-.054-2.769-.578-3.773-1.573C.556 20.111.036 18.857 0 17.347v-7.36c.036-1.511.556-2.765 1.56-3.76 1.004-.996 2.264-1.52 3.773-1.574h.854L8.08 2.347c.219-.226.471-.338.756-.338.285 0 .537.112.756.338l2.374 2.307h2.107l2.374-2.307c.219-.226.471-.338.756-.338.285 0 .537.112.756.338l1.854 2.306Zm-.854 1.92-.012-.002h-9.894l-.012.002c-1.126.04-2.051.41-2.773 1.109-.723.698-1.09 1.622-1.102 2.77v7.093c.013 1.148.38 2.072 1.102 2.77.722.698 1.647 1.069 2.773 1.109h13.368c1.126-.04 2.051-.411 2.773-1.109.722-.698 1.089-1.622 1.102-2.77v-7.093c-.013-1.148-.38-1.958-1.102-2.77-.722-.812-1.647-1.07-2.773-1.11Zm-1.84 5.44c.424 0 .786.147 1.085.442.3.294.45.65.45 1.069v.062c0 .419-.15.775-.45 1.07-.3.294-.661.441-1.085.441-.424 0-.786-.147-1.085-.442-.3-.294-.45-.65-.45-1.069v-.062c0-.419.15-.775.45-1.069.3-.295.661-.442 1.085-.442Zm-8.587 0c.424 0 .786.147 1.085.442.3.294.45.65.45 1.069v.062c0 .419-.15.775-.45 1.07-.3.294-.661.441-1.085.441-.424 0-.786-.147-1.085-.442-.3-.294-.45-.65-.45-1.069v-.062c0-.419.15-.775.45-1.069.3-.295.661-.442 1.085-.442Z"
+        fill="currentColor"
+      />
+    </svg>
+  )
+}
+
+const BILIBILI_HOME = "https://www.bilibili.com/"
+const BILIBILI_EMBED = "https://player.bilibili.com/player.html"
+
+function extractBvid(value: string): string | null {
+  const patterns = [/video\/(BV[\w]+)/, /(?:^|\/)(BV[\w]{10})(?:[?&#/]|$)/, /\bBV[\w]{10}\b/]
   for (const p of patterns) {
     const match = value.match(p)
     if (match) return match[1]
@@ -40,28 +48,19 @@ function hasLinkPayload(dataTransfer: DataTransfer): boolean {
 
 export function MusicWidget() {
   const [query, setQuery] = useState("")
-  const [results, setResults] = useState<YoutubeResult[]>([])
-  const [videoId, setVideoId] = useState<string | null>(null)
+  const [results, setResults] = useState<BilibiliResult[]>([])
+  const [bvid, setBvid] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [dragActive, setDragActive] = useState(false)
-  const { t, lang } = useI18n()
+  const { t } = useI18n()
   const searchEnabled = isTauri()
-  const dropHint =
-    lang === "es"
-      ? "Busca un video o arrastra aqui un enlace de YouTube"
-      : "Search a video or drop a YouTube link here"
-  const dropReady =
-    lang === "es"
-      ? "Suelta el enlace de YouTube para reproducirlo"
-      : "Drop the YouTube link to play it"
-  const dropInvalid =
-    lang === "es"
-      ? "No he encontrado un video de YouTube en ese enlace"
-      : "I could not find a YouTube video in that link"
+  const dropHint = t("music.dropHint")
+  const dropReady = t("music.dropReady")
+  const dropInvalid = t("music.dropInvalid")
 
   const playVideo = (id: string) => {
-    setVideoId(id)
+    setBvid(id)
     setResults([])
     setError(null)
     setQuery("")
@@ -71,7 +70,7 @@ export function MusicWidget() {
     const q = query.trim()
     if (!q) return
 
-    const id = extractVideoId(q)
+    const id = extractBvid(q)
     if (id) {
       playVideo(id)
       return
@@ -85,7 +84,7 @@ export function MusicWidget() {
     setLoading(true)
     setError(null)
     try {
-      const items = await youtubeSearch(q)
+      const items = await bilibiliSearch(q)
       setResults(items)
       if (items.length === 0) setError(t("music.noResults"))
     } catch {
@@ -96,7 +95,7 @@ export function MusicWidget() {
   }
 
   const reset = () => {
-    setVideoId(null)
+    setBvid(null)
     setResults([])
     setQuery("")
     setError(null)
@@ -126,7 +125,7 @@ export function MusicWidget() {
     event.preventDefault()
     setDragActive(false)
 
-    const id = extractVideoId(getDroppedText(event.dataTransfer))
+    const id = extractBvid(getDroppedText(event.dataTransfer))
     if (id) {
       playVideo(id)
     } else {
@@ -143,9 +142,9 @@ export function MusicWidget() {
       onDrop={handleDrop}
     >
       {dragActive && (
-        <div className="pointer-events-none absolute inset-3 z-20 flex items-center justify-center rounded-2xl border border-red-400/50 bg-background/80 px-4 text-center text-sm font-medium text-foreground shadow-lg backdrop-blur-md">
+        <div className="pointer-events-none absolute inset-3 z-20 flex items-center justify-center rounded-2xl border border-pink-400/50 bg-background/80 px-4 text-center text-sm font-medium text-foreground shadow-lg backdrop-blur-md">
           <span className="flex items-center gap-2">
-            <Link2 className="h-4 w-4 text-red-500" />
+            <Link2 className="h-4 w-4 text-pink-500" />
             {dropReady}
           </span>
         </div>
@@ -154,14 +153,14 @@ export function MusicWidget() {
       <div className="music-widget-header flex items-center justify-between gap-2 px-5 pb-3 pr-14 pt-5">
         <button
           type="button"
-          onClick={() => void openExternalUrl("https://www.youtube.com/")}
+          onClick={() => void openExternalUrl(BILIBILI_HOME)}
           className="dashboard-widget-title dashboard-widget-title-link"
-          title="YouTube"
+          title={t("music.title")}
         >
-          <Youtube className="h-4 w-4 text-red-500" />
+          <BilibiliIcon className="h-4 w-4 text-pink-500" />
           <span>{t("music.title")}</span>
         </button>
-        {(videoId || results.length > 0) && (
+        {(bvid || results.length > 0) && (
           <button
             type="button"
             onClick={reset}
@@ -173,7 +172,7 @@ export function MusicWidget() {
         )}
       </div>
 
-      {!videoId && (
+      {!bvid && (
         <div className="music-search-row flex gap-2 px-5 pb-4">
           <input
             type="text"
@@ -187,7 +186,7 @@ export function MusicWidget() {
             type="button"
             onClick={() => void handleSearch()}
             disabled={loading || !query.trim()}
-            className="music-search-button flex shrink-0 items-center gap-1.5 rounded-xl bg-red-500/90 px-4 py-2 text-sm font-medium text-white transition-[background-color,opacity,transform] hover:bg-red-500 active:scale-[0.98] disabled:opacity-50"
+            className="music-search-button flex shrink-0 items-center gap-1.5 rounded-xl bg-pink-500/90 px-4 py-2 text-sm font-medium text-white transition-[background-color,opacity,transform] hover:bg-pink-500 active:scale-[0.98] disabled:opacity-50"
           >
             {loading ? (
               <Loader2 className="h-4 w-4 animate-spin" />
@@ -201,12 +200,12 @@ export function MusicWidget() {
 
       {error && <p className="px-5 pb-2 text-xs text-muted-foreground">{error}</p>}
 
-      {videoId ? (
+      {bvid ? (
         <div className="music-player overflow-hidden border-t border-border/50 bg-black/90">
           <div className="relative h-full min-h-0 w-full">
             <iframe
-              title="YouTube"
-              src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&modestbranding=1&rel=0`}
+              title={t("music.title")}
+              src={`${BILIBILI_EMBED}?bvid=${bvid}&autoplay=1&high_quality=1&danmaku=0&page=1`}
               allow="autoplay; encrypted-media; fullscreen"
               allowFullScreen
               className="absolute inset-0 h-full w-full"
@@ -219,7 +218,7 @@ export function MusicWidget() {
             <li key={video.id}>
               <button
                 type="button"
-                onClick={() => setVideoId(video.id)}
+                onClick={() => setBvid(video.id)}
                 className="flex w-full items-center gap-3 rounded-xl border border-transparent p-1.5 text-left transition-colors hover:border-border/60 hover:bg-foreground/5 focus-visible:border-ring focus-visible:outline-none"
               >
                 <img

@@ -194,16 +194,16 @@ export async function onUpdateFinished(handler: () => void): Promise<UnlistenFn>
   return ev.listen("update://finished", () => handler())
 }
 
-export interface YoutubeResult {
+export interface BilibiliResult {
   id: string
   title: string
   channel: string
   thumbnail: string
 }
 
-export async function youtubeSearch(query: string): Promise<YoutubeResult[]> {
+export async function bilibiliSearch(query: string): Promise<BilibiliResult[]> {
   if (!isTauri()) return []
-  return invokeCommand<YoutubeResult[]>("youtube_search", { query })
+  return invokeCommand<BilibiliResult[]>("bilibili_search", { query })
 }
 
 export async function openAiHub(initialTab: string): Promise<void> {

@@ -1,1517 +1,1577 @@
 [
   {
-    "id": "aristotle-001",
-    "author": "Aristotle",
-    "source": "Curated classic quote set",
+    "id": "chinese-001",
+    "author": "孔子 (Confucius)",
+    "source": "《论语》· Analects",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Quality is not an act, but a habit.",
-      "es": "La calidad no es un acto, es un hábito.",
-      "zh": "品质不是一种行为，而是一种习惯。"
+      "en": "Is it not a pleasure to learn and practice what you have learned?",
+      "es": "¿No es un placer aprender y practicar lo aprendido?",
+      "zh": "学而时习之，不亦说乎？"
     }
   },
   {
-    "id": "aristotle-002",
-    "author": "Aristotle",
-    "source": "Curated classic quote set",
+    "id": "chinese-002",
+    "author": "孔子 (Confucius)",
+    "source": "《论语》· Analects",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Knowing yourself is the beginning of wisdom.",
-      "es": "Conocerse a uno mismo es el principio de la sabiduría.",
-      "zh": "认识自己，是智慧的开端。"
+      "en": "Do not do to others what you would not want done to yourself.",
+      "es": "No hagas a los demás lo que no quieras que te hagan a ti.",
+      "zh": "己所不欲，勿施于人。"
     }
   },
   {
-    "id": "aristotle-003",
-    "author": "Aristotle",
-    "source": "Curated classic quote set",
+    "id": "chinese-003",
+    "author": "孔子 (Confucius)",
+    "source": "《论语》· Analects",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Hope is a waking dream.",
-      "es": "La esperanza es un sueño despierto.",
-      "zh": "希望是清醒时的梦境。"
+      "en": "When three people walk together, one of them can always teach me something.",
+      "es": "Entre tres personas que caminan juntas, siempre hay una que puede enseñarme algo.",
+      "zh": "三人行，必有我师焉。"
     }
   },
   {
-    "id": "marcus-aurelius-004",
-    "author": "Marcus Aurelius",
-    "source": "Curated classic quote set",
+    "id": "chinese-004",
+    "author": "孔子 (Confucius)",
+    "source": "《论语》· Analects",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "The obstacle is the way.",
-      "es": "El obstáculo es el camino.",
-      "zh": "障碍即是道路。"
+      "en": "Review the old and you will understand the new — this makes a teacher.",
+      "es": "Repasar lo viejo y entender lo nuevo: eso es lo que hace a un maestro.",
+      "zh": "温故而知新，可以为师矣。"
     }
   },
   {
-    "id": "marcus-aurelius-005",
-    "author": "Marcus Aurelius",
-    "source": "Curated classic quote set",
+    "id": "chinese-005",
+    "author": "孔子 (Confucius)",
+    "source": "《论语》· Analects",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Waste no more time arguing what a good person should be. Be one.",
-      "es": "No pierdas tiempo discutiendo cómo ser bueno. Sé bueno.",
-      "zh": "别再争论好人应该是什么样子，去做一个好人。"
+      "en": "Learning without thinking is vain; thinking without learning is dangerous.",
+      "es": "Aprender sin pensar es inútil; pensar sin aprender es peligroso.",
+      "zh": "学而不思则罔，思而不学则殆。"
     }
   },
   {
-    "id": "marcus-aurelius-006",
-    "author": "Marcus Aurelius",
-    "source": "Curated classic quote set",
+    "id": "chinese-006",
+    "author": "孔子 (Confucius)",
+    "source": "《论语》· Analects",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "What we do now echoes in eternity.",
-      "es": "Lo que hacemos ahora resuena en la eternidad.",
-      "zh": "我们现在所做的一切，将在永恒中回响。"
+      "en": "Those who know are less than those who love; those who love are less than those who delight.",
+      "es": "Quien sabe vale menos que quien ama; quien ama, menos que quien se deleita.",
+      "zh": "知之者不如好之者，好之者不如乐之者。"
     }
   },
   {
-    "id": "seneca-007",
-    "author": "Seneca",
-    "source": "Curated classic quote set",
+    "id": "chinese-007",
+    "author": "孔子 (Confucius)",
+    "source": "《论语》· Analects",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "While we wait for life, life passes.",
-      "es": "Mientras esperamos la vida, la vida pasa.",
-      "zh": "在我们等待生活时，生活已然流逝。"
+      "en": "See the worthy and strive to equal them; see the unworthy and examine yourself.",
+      "es": "Ante los buenos, aspira a igualarlos; ante los malos, examina tu propia conducta.",
+      "zh": "见贤思齐焉，见不贤而内自省也。"
     }
   },
   {
-    "id": "seneca-008",
-    "author": "Seneca",
-    "source": "Curated classic quote set",
+    "id": "chinese-008",
+    "author": "孔子 (Confucius)",
+    "source": "《论语》· Analects",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "No wind favors the sailor who has no port.",
-      "es": "Ningún viento favorece a quien no tiene puerto.",
-      "zh": "没有港口的水手，等不到顺风。"
+      "en": "The noble person is open and at ease; the petty person is always anxious.",
+      "es": "El hombre noble es abierto y sereno; el mezquino vive siempre inquieto.",
+      "zh": "君子坦荡荡，小人长戚戚。"
     }
   },
   {
-    "id": "seneca-009",
-    "author": "Seneca",
-    "source": "Curated classic quote set",
+    "id": "chinese-009",
+    "author": "荀子 (Xunzi)",
+    "source": "《荀子》· Xunzi",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Difficulties strengthen the mind.",
-      "es": "Las dificultades fortalecen la mente.",
-      "zh": "困难磨砺心智。"
+      "en": "Without single steps no thousand-li journey; without streams no rivers and seas.",
+      "es": "Sin pasos no hay viaje de mil li; sin arroyos no hay ríos ni mares.",
+      "zh": "不积跬步，无以至千里；不积小流，无以成江海。"
     }
   },
   {
-    "id": "epictetus-010",
-    "author": "Epictetus",
-    "source": "Curated classic quote set",
+    "id": "chinese-010",
+    "author": "荀子 (Xunzi)",
+    "source": "《荀子》· Xunzi",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "First say what you would be; then do what you must.",
-      "es": "Primero di quién quieres ser; luego haz lo necesario.",
-      "zh": "先想清楚你想成为什么样的人，然后去做你必须做的事。"
+      "en": "With unrelenting perseverance, even metal and stone can be carved.",
+      "es": "Con perseverancia incansable, hasta el metal y la piedra se pueden tallar.",
+      "zh": "锲而不舍，金石可镂。"
     }
   },
   {
-    "id": "epictetus-011",
-    "author": "Epictetus",
-    "source": "Curated classic quote set",
+    "id": "chinese-011",
+    "author": "老子 (Laozi)",
+    "source": "《道德经》· Tao Te Ching",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "It is not things that disturb us, but our judgments.",
-      "es": "No nos perturban las cosas, sino nuestros juicios.",
-      "zh": "扰乱我们的不是事物本身，而是我们对事物的判断。"
-    }
-  },
-  {
-    "id": "epictetus-012",
-    "author": "Epictetus",
-    "source": "Curated classic quote set",
-    "tags": [
-      "classic",
-      "short",
-      "daily"
-    ],
-    "text": {
-      "en": "No person is free who is not master of himself.",
-      "es": "Nadie es libre si no es dueño de sí mismo.",
-      "zh": "不能主宰自己的人，谈不上自由。"
-    }
-  },
-  {
-    "id": "confucius-013",
-    "author": "Confucius",
-    "source": "Curated classic quote set",
-    "tags": [
-      "classic",
-      "short",
-      "daily"
-    ],
-    "text": {
-      "en": "Wherever you go, go with all your heart.",
-      "es": "Vayas donde vayas, ve con todo tu corazón.",
-      "zh": "无论走到哪里，都全心全意。"
-    }
-  },
-  {
-    "id": "confucius-014",
-    "author": "Confucius",
-    "source": "Curated classic quote set",
-    "tags": [
-      "classic",
-      "short",
-      "daily"
-    ],
-    "text": {
-      "en": "It does not matter how slowly you go, as long as you do not stop.",
-      "es": "No importa ir despacio, importa no detenerse.",
-      "zh": "走得慢没关系，只要不停止前进。"
-    }
-  },
-  {
-    "id": "confucius-015",
-    "author": "Confucius",
-    "source": "Curated classic quote set",
-    "tags": [
-      "classic",
-      "short",
-      "daily"
-    ],
-    "text": {
-      "en": "Study the past if you would define the future.",
-      "es": "Estudia el pasado si quieres definir el futuro.",
-      "zh": "研究过去，才能定义未来。"
-    }
-  },
-  {
-    "id": "lao-tzu-016",
-    "author": "Lao Tzu",
-    "source": "Curated classic quote set",
-    "tags": [
-      "classic",
-      "short",
-      "daily"
-    ],
-    "text": {
-      "en": "A journey of a thousand miles begins with one step.",
-      "es": "Un viaje de mil millas empieza con un paso.",
+      "en": "A journey of a thousand miles begins beneath your feet.",
+      "es": "Un viaje de mil millas comienza bajo tus pies.",
       "zh": "千里之行，始于足下。"
     }
   },
   {
-    "id": "lao-tzu-017",
-    "author": "Lao Tzu",
-    "source": "Curated classic quote set",
+    "id": "chinese-012",
+    "author": "老子 (Laozi)",
+    "source": "《道德经》· Tao Te Ching",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "He who conquers himself is mighty.",
-      "es": "Quien se conquista a sí mismo es poderoso.",
+      "en": "The highest good is like water.",
+      "es": "El bien supremo es como el agua.",
+      "zh": "上善若水。"
+    }
+  },
+  {
+    "id": "chinese-013",
+    "author": "老子 (Laozi)",
+    "source": "《道德经》· Tao Te Ching",
+    "tags": [
+      "classic",
+      "short",
+      "daily"
+    ],
+    "text": {
+      "en": "Knowing others is wisdom; knowing yourself is enlightenment.",
+      "es": "Conocer a los demás es sabiduría; conocerse a uno mismo es lucidez.",
+      "zh": "知人者智，自知者明。"
+    }
+  },
+  {
+    "id": "chinese-014",
+    "author": "老子 (Laozi)",
+    "source": "《道德经》· Tao Te Ching",
+    "tags": [
+      "classic",
+      "short",
+      "daily"
+    ],
+    "text": {
+      "en": "Conquering others takes force; conquering yourself takes strength.",
+      "es": "Vencer a otros requiere fuerza; vencerse a uno mismo requiere fortaleza.",
       "zh": "胜人者有力，自胜者强。"
     }
   },
   {
-    "id": "lao-tzu-018",
-    "author": "Lao Tzu",
-    "source": "Curated classic quote set",
+    "id": "chinese-015",
+    "author": "《周易》· I Ching",
+    "source": "《周易》· I Ching",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Great acts are made up of small deeds.",
-      "es": "Los grandes actos se componen de pequeñas acciones.",
-      "zh": "伟大的行动由一个个微小的举动构成。"
+      "en": "As heaven moves with vigor, the noble person strives unceasingly.",
+      "es": "Así como el cielo se mueve con vigor, el hombre noble se esfuerza sin descanso.",
+      "zh": "天行健，君子以自强不息。"
     }
   },
   {
-    "id": "socrates-019",
-    "author": "Socrates",
-    "source": "Curated classic quote set",
+    "id": "chinese-016",
+    "author": "《周易》· I Ching",
+    "source": "《周易》· I Ching",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "The unexamined life is not worth living.",
-      "es": "Una vida sin examen no merece ser vivida.",
-      "zh": "未经审视的人生不值得过。"
+      "en": "As the earth is vast and yielding, the noble person carries all with virtue.",
+      "es": "Así como la tierra es vasta y acogedora, el hombre noble lo sostiene todo con virtud.",
+      "zh": "地势坤，君子以厚德载物。"
     }
   },
   {
-    "id": "socrates-020",
-    "author": "Socrates",
-    "source": "Curated classic quote set",
+    "id": "chinese-017",
+    "author": "孟子 (Mencius)",
+    "source": "《孟子》· Mencius",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "I know that I know nothing.",
-      "es": "Solo sé que no sé nada.",
-      "zh": "我唯一知道的，就是我一无所知。"
+      "en": "One thrives in adversity and perishes in comfort.",
+      "es": "Se prospera en la adversidad y se perece en la comodidad.",
+      "zh": "生于忧患，死于安乐。"
     }
   },
   {
-    "id": "socrates-021",
-    "author": "Socrates",
-    "source": "Curated classic quote set",
+    "id": "chinese-018",
+    "author": "孟子 (Mencius)",
+    "source": "《孟子》· Mencius",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Be as you wish to seem.",
-      "es": "Sé como deseas parecer.",
-      "zh": "想成为什么样的人，就以什么样的姿态示人。"
+      "en": "Respect your own elders, and extend that respect to all elders.",
+      "es": "Respeta a tus mayores y extiende ese respeto a todos los mayores.",
+      "zh": "老吾老，以及人之老。"
     }
   },
   {
-    "id": "plato-022",
-    "author": "Plato",
-    "source": "Curated classic quote set",
+    "id": "chinese-019",
+    "author": "孟子 (Mencius)",
+    "source": "《孟子》· Mencius",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "The beginning is the most important part of the work.",
-      "es": "El comienzo es la parte más importante del trabajo.",
-      "zh": "万事开头最重要。"
+      "en": "When heaven assigns a great task, it first tests the person's mind and will.",
+      "es": "Cuando el cielo asigna una gran misión, primero pone a prueba la mente y la voluntad.",
+      "zh": "天将降大任于斯人也，必先苦其心志。"
     }
   },
   {
-    "id": "plato-023",
-    "author": "Plato",
-    "source": "Curated classic quote set",
+    "id": "chinese-020",
+    "author": "孟子 (Mencius)",
+    "source": "《孟子》· Mencius",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Courage is knowing what not to fear.",
-      "es": "El valor es saber qué no temer.",
-      "zh": "勇气就是知道什么不值得害怕。"
+      "en": "Wealth cannot corrupt, poverty cannot sway, force cannot bend.",
+      "es": "Ni la riqueza corrompe, ni la pobreza doblega, ni la fuerza rinde.",
+      "zh": "富贵不能淫，贫贱不能移，威武不能屈。"
     }
   },
   {
-    "id": "plato-024",
-    "author": "Plato",
-    "source": "Curated classic quote set",
+    "id": "chinese-021",
+    "author": "屈原 (Qu Yuan)",
+    "source": "《离骚》· Li Sao",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Ideas are the source of all things.",
-      "es": "Las ideas son el origen de todas las cosas.",
-      "zh": "思想是一切事物的源泉。"
+      "en": "The road is long and far; I will search high and low without rest.",
+      "es": "El camino es largo y lejano; buscaré arriba y abajo sin descanso.",
+      "zh": "路漫漫其修远兮，吾将上下而求索。"
     }
   },
   {
-    "id": "cicero-025",
-    "author": "Cicero",
-    "source": "Curated classic quote set",
+    "id": "chinese-022",
+    "author": "屈原 (Qu Yuan)",
+    "source": "《离骚》· Li Sao",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Memory is the treasury of all things.",
-      "es": "La memoria es el tesoro de todas las cosas.",
-      "zh": "记忆是一切事物的宝库。"
+      "en": "For what my heart holds dear, I would not regret even nine deaths.",
+      "es": "Por lo que mi corazón aprecia, no me arrepentiría ni con nueve muertes.",
+      "zh": "亦余心之所善兮，虽九死其犹未悔。"
     }
   },
   {
-    "id": "cicero-026",
-    "author": "Cicero",
-    "source": "Curated classic quote set",
+    "id": "chinese-023",
+    "author": "李白 (Li Bai)",
+    "source": "《行路难》· Hard Is the Road",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "If you have a garden and a library, you have everything.",
-      "es": "Si tienes jardín y biblioteca, lo tienes todo.",
-      "zh": "拥有花园和图书馆，你就拥有了一切。"
+      "en": "The time will come to ride the wind and break the waves, setting sail straight across the sea.",
+      "es": "Llegará el momento de surcar el viento y las olas, izando velas rumbo al mar.",
+      "zh": "长风破浪会有时，直挂云帆济沧海。"
     }
   },
   {
-    "id": "cicero-027",
-    "author": "Cicero",
-    "source": "Curated classic quote set",
+    "id": "chinese-024",
+    "author": "李白 (Li Bai)",
+    "source": "《将进酒》· Bringing in the Wine",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Gratitude is the greatest virtue.",
-      "es": "La gratitud es la mayor virtud.",
-      "zh": "感恩是最伟大的美德。"
+      "en": "Heaven gave me talents; they are meant to be used.",
+      "es": "El cielo me dio talentos; están hechos para usarse.",
+      "zh": "天生我材必有用。"
     }
   },
   {
-    "id": "horace-028",
-    "author": "Horace",
-    "source": "Curated classic quote set",
+    "id": "chinese-025",
+    "author": "杜甫 (Du Fu)",
+    "source": "《望岳》· Gazing at the Peak",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Begin, and the work will be half done.",
-      "es": "Empieza, y la obra estará medio hecha.",
-      "zh": "良好的开端是成功的一半。"
+      "en": "I will climb to the very summit and see all mountains at a glance.",
+      "es": "Subiré hasta la cima y contemplaré todas las montañas de un vistazo.",
+      "zh": "会当凌绝顶，一览众山小。"
     }
   },
   {
-    "id": "horace-029",
-    "author": "Horace",
-    "source": "Curated classic quote set",
+    "id": "chinese-026",
+    "author": "杜甫 (Du Fu)",
+    "source": "《奉赠韦左丞丈二十二韵》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Rule your mind, or it will rule you.",
-      "es": "Domina tu mente, o ella te dominará.",
-      "zh": "驾驭你的思想，否则它就会驾驭你。"
+      "en": "Read ten thousand volumes, and your writing flows as if by magic.",
+      "es": "Lee diez mil volúmenes y tu escritura fluirá como por arte de magia.",
+      "zh": "读书破万卷，下笔如有神。"
     }
   },
   {
-    "id": "virgil-030",
-    "author": "Virgil",
-    "source": "Curated classic quote set",
+    "id": "chinese-027",
+    "author": "王勃 (Wang Bo)",
+    "source": "《送杜少府之任蜀州》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Fortune favors the bold.",
-      "es": "La fortuna favorece a los audaces.",
-      "zh": "幸运眷顾勇者。"
+      "en": "A bosom friend far away brings a distant land near.",
+      "es": "Un amigo íntimo en la lejanía acerca la tierra más remota.",
+      "zh": "海内存知己，天涯若比邻。"
     }
   },
   {
-    "id": "virgil-031",
-    "author": "Virgil",
-    "source": "Curated classic quote set",
+    "id": "chinese-028",
+    "author": "李商隐 (Li Shangyin)",
+    "source": "《无题》· Untitled",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "They can because they think they can.",
-      "es": "Pueden porque creen que pueden.",
-      "zh": "他们行，是因为他们相信自己行。"
+      "en": "A silkworm spins its silk till death; a candle sheds its tears till it burns to ash.",
+      "es": "El gusano de seda teje hasta morir; la vela llora hasta consumirse en ceniza.",
+      "zh": "春蚕到死丝方尽，蜡炬成灰泪始干。"
     }
   },
   {
-    "id": "ovid-032",
-    "author": "Ovid",
-    "source": "Curated classic quote set",
+    "id": "chinese-029",
+    "author": "范仲淹 (Fan Zhongyan)",
+    "source": "《岳阳楼记》· Yueyang Tower",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Dripping water hollows out stone.",
-      "es": "La gota constante horada la piedra.",
-      "zh": "滴水穿石。"
+      "en": "Worry before all the world worries; rejoice after all the world rejoices.",
+      "es": "Preocúpate antes que todos; alégrate después que todos.",
+      "zh": "先天下之忧而忧，后天下之乐而乐。"
     }
   },
   {
-    "id": "ovid-033",
-    "author": "Ovid",
-    "source": "Curated classic quote set",
+    "id": "chinese-030",
+    "author": "陆游 (Lu You)",
+    "source": "《冬夜读书示子聿》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Take rest; a field that has rested gives a good harvest.",
-      "es": "Descansa; el campo reposado da buena cosecha.",
-      "zh": "休息吧；休耕的田地会带来好收成。"
+      "en": "What you get from books alone feels shallow; true understanding demands practice.",
+      "es": "Lo que se aprende solo en los libros es superficial; el verdadero saber exige práctica.",
+      "zh": "纸上得来终觉浅，绝知此事要躬行。"
     }
   },
   {
-    "id": "leonardo-da-vinci-034",
-    "author": "Leonardo da Vinci",
-    "source": "Curated classic quote set",
+    "id": "chinese-031",
+    "author": "陆游 (Lu You)",
+    "source": "《游山西村》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Simplicity is the ultimate sophistication.",
-      "es": "La simplicidad es la máxima sofisticación.",
-      "zh": "简洁是终极的精致。"
+      "en": "Past hills and rivers the road seems lost; then willows bloom and a village appears.",
+      "es": "Entre montañas y ríos el camino parece perderse; luego florecen los sauces y aparece una aldea.",
+      "zh": "山重水复疑无路，柳暗花明又一村。"
     }
   },
   {
-    "id": "leonardo-da-vinci-035",
-    "author": "Leonardo da Vinci",
-    "source": "Curated classic quote set",
+    "id": "chinese-032",
+    "author": "韩愈 (Han Yu)",
+    "source": "《进学解》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Learning never exhausts the mind.",
-      "es": "Aprender nunca agota la mente.",
-      "zh": "学习永不让头脑疲惫。"
+      "en": "Excellence comes from diligence and is ruined by idleness.",
+      "es": "La excelencia nace de la diligencia y se arruina con la ociosidad.",
+      "zh": "业精于勤，荒于嬉。"
     }
   },
   {
-    "id": "leonardo-da-vinci-036",
-    "author": "Leonardo da Vinci",
-    "source": "Curated classic quote set",
+    "id": "chinese-033",
+    "author": "韩愈 (Han Yu)",
+    "source": "《马说》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Art lives from constraints and dies from freedom.",
-      "es": "El arte vive de límites y muere de libertad.",
-      "zh": "艺术生于限制，死于自由。"
+      "en": "Swift horses are common, but discerning judges are rare.",
+      "es": "Caballos veloces abundan, pero los jueces perspicaces son raros.",
+      "zh": "千里马常有，而伯乐不常有。"
     }
   },
   {
-    "id": "michelangelo-037",
-    "author": "Michelangelo",
-    "source": "Curated classic quote set",
+    "id": "chinese-034",
+    "author": "朱熹 (Zhu Xi)",
+    "source": "《观书有感》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Genius is eternal patience.",
-      "es": "El genio es paciencia eterna.",
-      "zh": "天才是永恒的耐心。"
+      "en": "Why is the pond water so clear? Because living water flows from its source.",
+      "es": "¿Por qué el agua del estanque es tan clara? Porque de su fuente fluye agua viva.",
+      "zh": "问渠那得清如许，为有源头活水来。"
     }
   },
   {
-    "id": "michelangelo-038",
-    "author": "Michelangelo",
-    "source": "Curated classic quote set",
+    "id": "chinese-035",
+    "author": "苏轼 (Su Shi)",
+    "source": "《稼说送张琥》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "If people knew how hard I worked, it would not seem wonderful.",
-      "es": "Si supieran cuánto trabajé, no parecería tan admirable.",
-      "zh": "如果人们知道我多么努力，就不会觉得这很了不起了。"
+      "en": "Observe widely and choose sparingly; accumulate deeply and release gently.",
+      "es": "Observa mucho y elige poco; acumula en profundidad y libera con mesura.",
+      "zh": "博观而约取，厚积而薄发。"
     }
   },
   {
-    "id": "william-shakespeare-039",
-    "author": "William Shakespeare",
-    "source": "Curated classic quote set",
+    "id": "chinese-036",
+    "author": "苏轼 (Su Shi)",
+    "source": "《晁错论》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "To thine own self be true.",
-      "es": "Sé fiel a ti mismo.",
-      "zh": "忠于你自己。"
+      "en": "Those who accomplish great things need not only extraordinary talent but also unyielding will.",
+      "es": "Quienes logran grandes cosas necesitan no solo talento extraordinario, sino también voluntad inquebrantable.",
+      "zh": "古之立大事者，不惟有超世之才，亦必有坚忍不拔之志。"
     }
   },
   {
-    "id": "william-shakespeare-040",
-    "author": "William Shakespeare",
-    "source": "Curated classic quote set",
+    "id": "chinese-037",
+    "author": "文天祥 (Wen Tianxiang)",
+    "source": "《过零丁洋》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Brevity is the soul of wit.",
-      "es": "La brevedad es el alma del ingenio.",
-      "zh": "简洁是智慧的灵魂。"
+      "en": "Since ancient times, who can escape death? Leave a loyal heart to shine in history.",
+      "es": "Desde la antigüedad, ¿quién escapa a la muerte? Deja un corazón leal brillando en la historia.",
+      "zh": "人生自古谁无死，留取丹心照汗青。"
     }
   },
   {
-    "id": "william-shakespeare-041",
-    "author": "William Shakespeare",
-    "source": "Curated classic quote set",
+    "id": "chinese-038",
+    "author": "王安石 (Wang Anshi)",
+    "source": "《登飞来峰》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Action is eloquence.",
-      "es": "La acción es elocuencia.",
-      "zh": "行动即是雄辩。"
+      "en": "Fear not the drifting clouds that block your view — you stand at the highest level.",
+      "es": "No temas las nubes que nublan la vista: estás en lo más alto.",
+      "zh": "不畏浮云遮望眼，自缘身在最高层。"
     }
   },
   {
-    "id": "miguel-de-cervantes-042",
-    "author": "Miguel de Cervantes",
-    "source": "Curated classic quote set",
+    "id": "chinese-039",
+    "author": "刘禹锡 (Liu Yuxi)",
+    "source": "《酬乐天扬州初逢席上见赠》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Diligence is the mother of good fortune.",
-      "es": "La diligencia es madre de la buena ventura.",
-      "zh": "勤勉是好运之母。"
+      "en": "Past the sunken boat a thousand sails pass; before the withered tree ten thousand trees bloom.",
+      "es": "Junto al barco hundido pasan mil velas; ante el árbol enfermo florecen diez mil.",
+      "zh": "沉舟侧畔千帆过，病树前头万木春。"
     }
   },
   {
-    "id": "miguel-de-cervantes-043",
-    "author": "Miguel de Cervantes",
-    "source": "Curated classic quote set",
+    "id": "chinese-040",
+    "author": "龚自珍 (Gong Zizhen)",
+    "source": "《己亥杂诗》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "He who reads much and walks much, sees much and knows much.",
-      "es": "Quien lee mucho y anda mucho, ve mucho y sabe mucho.",
-      "zh": "多读多行，多见多知。"
+      "en": "Fallen petals are not heartless; they turn to spring soil that nourishes new flowers.",
+      "es": "Los pétalos caídos no son insensibles: se vuelven tierra de primavera que nutre nuevas flores.",
+      "zh": "落红不是无情物，化作春泥更护花。"
     }
   },
   {
-    "id": "miguel-de-cervantes-044",
-    "author": "Miguel de Cervantes",
-    "source": "Curated classic quote set",
+    "id": "chinese-041",
+    "author": "颜真卿 (Yan Zhenqing)",
+    "source": "《劝学》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Truth may bend, but it never breaks.",
-      "es": "La verdad adelgaza, pero no quiebra.",
-      "zh": "真理可以弯曲，但不会折断。"
+      "en": "In youth you do not know to study early; with white hair you regret learning too late.",
+      "es": "De joven no sabes estudiar a tiempo; de mayor lamentas haber aprendido tarde.",
+      "zh": "黑发不知勤学早，白首方悔读书迟。"
     }
   },
   {
-    "id": "baltasar-gracian-045",
-    "author": "Baltasar Graci?n",
-    "source": "Curated classic quote set",
+    "id": "chinese-042",
+    "author": "郑板桥 (Zheng Banqiao)",
+    "source": "《竹石》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "The good, if brief, is twice good.",
-      "es": "Lo bueno, si breve, dos veces bueno.",
-      "zh": "好的东西，如果短暂，好上加好。"
+      "en": "Battered by a thousand blows, it stands firm — whatever wind blows from east or west.",
+      "es": "Golpeado mil veces, permanece firme — venga el viento de donde venga.",
+      "zh": "千磨万击还坚劲，任尔东西南北风。"
     }
   },
   {
-    "id": "baltasar-gracian-046",
-    "author": "Baltasar Graci?n",
-    "source": "Curated classic quote set",
+    "id": "chinese-043",
+    "author": "诸葛亮 (Zhuge Liang)",
+    "source": "《诫子书》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Respect yourself if you would have others respect you.",
-      "es": "Respétate si quieres que otros te respeten.",
-      "zh": "想获得别人的尊重，先尊重自己。"
+      "en": "Without detachment you cannot clarify your ambition; without calm you cannot reach far.",
+      "es": "Sin desapego no se aclara el propósito; sin serenidad no se llega lejos.",
+      "zh": "非淡泊无以明志，非宁静无以致远。"
     }
   },
   {
-    "id": "baltasar-gracian-047",
-    "author": "Baltasar Graci?n",
-    "source": "Curated classic quote set",
+    "id": "chinese-044",
+    "author": "诸葛亮 (Zhuge Liang)",
+    "source": "《诫子书》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "The wise do at once what fools do at last.",
-      "es": "El sabio hace pronto lo que el necio hace tarde.",
-      "zh": "智者当下就做，愚者最后才做。"
+      "en": "Tranquility cultivates the self; frugality nurtures virtue.",
+      "es": "La tranquilidad cultiva el ser; la frugalidad nutre la virtud.",
+      "zh": "静以修身，俭以养德。"
     }
   },
   {
-    "id": "benjamin-franklin-048",
-    "author": "Benjamin Franklin",
-    "source": "Curated classic quote set",
+    "id": "chinese-045",
+    "author": "诸葛亮 (Zhuge Liang)",
+    "source": "《后出师表》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Lost time is never found again.",
-      "es": "El tiempo perdido nunca se recupera.",
-      "zh": "时间一去不复返。"
+      "en": "Bend every effort to the task until death brings it to an end.",
+      "es": "Entregarse por completo a la tarea hasta que la muerte la termine.",
+      "zh": "鞠躬尽瘁，死而后已。"
     }
   },
   {
-    "id": "benjamin-franklin-049",
-    "author": "Benjamin Franklin",
-    "source": "Curated classic quote set",
+    "id": "chinese-046",
+    "author": "顾炎武 (Gu Yanwu)",
+    "source": "《日知录》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Well done is better than well said.",
-      "es": "Bien hecho es mejor que bien dicho.",
-      "zh": "做得好胜过说得好。"
+      "en": "The rise and fall of the nation concerns every ordinary person.",
+      "es": "El auge y la caída de la nación concierne a toda persona.",
+      "zh": "天下兴亡，匹夫有责。"
     }
   },
   {
-    "id": "benjamin-franklin-050",
-    "author": "Benjamin Franklin",
-    "source": "Curated classic quote set",
+    "id": "chinese-047",
+    "author": "林则徐 (Lin Zexu)",
+    "source": "《赴戍登程口占示家人》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Energy and persistence conquer all things.",
-      "es": "Energía y constancia conquistan todas las cosas.",
-      "zh": "精力与坚持可以征服一切。"
+      "en": "If it benefits the country, I stake my life; I shrink from neither fortune nor misfortune.",
+      "es": "Si beneficia al país, doy la vida; no huyo ni de la fortuna ni de la desgracia.",
+      "zh": "苟利国家生死以，岂因祸福避趋之。"
     }
   },
   {
-    "id": "abraham-lincoln-051",
-    "author": "Abraham Lincoln",
-    "source": "Curated classic quote set",
+    "id": "chinese-048",
+    "author": "鲁迅 (Lu Xun)",
+    "source": "《自嘲》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Whatever you are, be a good one.",
-      "es": "Seas lo que seas, sé bueno en ello.",
-      "zh": "无论你成为什么，都要成为其中的佼佼者。"
+      "en": "Fierce-browed I defy a thousand fingers; head bowed, I serve like an ox for the children.",
+      "es": "Con ceño frío desafío mil dedos; con la cabeza baja, sirvo como buey para los niños.",
+      "zh": "横眉冷对千夫指，俯首甘为孺子牛。"
     }
   },
   {
-    "id": "abraham-lincoln-052",
-    "author": "Abraham Lincoln",
-    "source": "Curated classic quote set",
+    "id": "chinese-049",
+    "author": "鲁迅 (Lu Xun)",
+    "source": "《故乡》· Hometown",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "The best way to predict your future is to create it.",
-      "es": "La mejor forma de prever tu futuro es crearlo.",
-      "zh": "预测未来的最好方式，就是创造未来。"
+      "en": "There is no road on the ground at first; when enough people walk it, a road is made.",
+      "es": "Al principio no hay camino en el suelo; cuando muchos lo pisan, el camino se forma.",
+      "zh": "其实地上本没有路，走的人多了，也便成了路。"
     }
   },
   {
-    "id": "abraham-lincoln-053",
-    "author": "Abraham Lincoln",
-    "source": "Curated classic quote set",
+    "id": "chinese-050",
+    "author": "鲁迅 (Lu Xun)",
+    "source": "《且介亭杂文》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Give me six hours to chop a tree, and I will sharpen the axe first.",
-      "es": "Dame seis horas para talar, y afilaré primero el hacha.",
-      "zh": "给我六小时砍树，我会先把斧头磨利。"
+      "en": "Time is like water in a sponge — squeeze it and there is always more.",
+      "es": "El tiempo es como el agua en una esponja: apriétala y siempre hay más.",
+      "zh": "时间就像海绵里的水，只要愿挤，总还是有的。"
     }
   },
   {
-    "id": "ralph-waldo-emerson-054",
-    "author": "Ralph Waldo Emerson",
-    "source": "Curated classic quote set",
+    "id": "chinese-051",
+    "author": "谚语 (Proverb)",
+    "source": "民间谚语· Proverb",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Do the thing, and you will have the power.",
-      "es": "Haz la cosa, y tendrás la fuerza.",
-      "zh": "去做，你就会拥有力量。"
+      "en": "Nothing in the world is difficult for a willing heart.",
+      "es": "Nada en el mundo es difícil para un corazón decidido.",
+      "zh": "世上无难事，只怕有心人。"
     }
   },
   {
-    "id": "ralph-waldo-emerson-055",
-    "author": "Ralph Waldo Emerson",
-    "source": "Curated classic quote set",
+    "id": "chinese-052",
+    "author": "谚语 (Proverb)",
+    "source": "民间谚语· Proverb",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Nothing great was ever achieved without enthusiasm.",
-      "es": "Nada grande se logró sin entusiasmo.",
-      "zh": "没有热情，成就不了任何伟大的事业。"
+      "en": "With enough effort, an iron pestle can be ground into a needle.",
+      "es": "Con suficiente empeño, un mortero de hierro se convierte en aguja.",
+      "zh": "只要功夫深，铁杵磨成针。"
     }
   },
   {
-    "id": "ralph-waldo-emerson-056",
-    "author": "Ralph Waldo Emerson",
-    "source": "Curated classic quote set",
+    "id": "chinese-053",
+    "author": "《尚书》· Book of Documents",
+    "source": "《尚书》· Book of Documents",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "The only person you are destined to become is yourself.",
-      "es": "La única persona que estás destinado a ser eres tú.",
-      "zh": "你注定要成为的，只有你自己。"
+      "en": "Complacency invites loss; humility brings benefit.",
+      "es": "La complacencia trae pérdidas; la humildad trae beneficios.",
+      "zh": "满招损，谦受益。"
     }
   },
   {
-    "id": "henry-david-thoreau-057",
-    "author": "Henry David Thoreau",
-    "source": "Curated classic quote set",
+    "id": "chinese-054",
+    "author": "《后汉书》· Book of the Later Han",
+    "source": "《后汉书》· Book of the Later Han",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Go confidently in the direction of your dreams.",
-      "es": "Avanza con confianza hacia tus sueños.",
-      "zh": "朝着梦想的方向，自信前行。"
+      "en": "Where there is a will, there is a way.",
+      "es": "Donde hay voluntad, hay un camino.",
+      "zh": "有志者，事竟成。"
     }
   },
   {
-    "id": "henry-david-thoreau-058",
-    "author": "Henry David Thoreau",
-    "source": "Curated classic quote set",
+    "id": "chinese-055",
+    "author": "《乐府诗集》· Collection of Yuefu",
+    "source": "《乐府诗集》· Collection of Yuefu",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Success usually comes to those too busy to look for it.",
-      "es": "El éxito suele llegar a quien está ocupado trabajando.",
-      "zh": "成功往往眷顾那些忙得无暇寻找它的人。"
+      "en": "If you do not strive while young, you will grieve in vain when old.",
+      "es": "Si no te esfuerzas de joven, de viejo solo te quedará el lamento.",
+      "zh": "少壮不努力，老大徒伤悲。"
     }
   },
   {
-    "id": "henry-david-thoreau-059",
-    "author": "Henry David Thoreau",
-    "source": "Curated classic quote set",
+    "id": "chinese-056",
+    "author": "《增广贤文》· Augmented Maxims",
+    "source": "《增广贤文》· Augmented Maxims",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "What you get by achieving your goals is not as important as what you become.",
-      "es": "Lo importante no es lo que logras, sino en quién te conviertes.",
-      "zh": "实现目标所得到的，不如你成为什么样的人重要。"
+      "en": "An inch of time is an inch of gold, yet gold cannot buy an inch of time.",
+      "es": "Un palmo de tiempo vale un palmo de oro, pero el oro no compra el tiempo.",
+      "zh": "一寸光阴一寸金，寸金难买寸光阴。"
     }
   },
   {
-    "id": "mark-twain-060",
-    "author": "Mark Twain",
-    "source": "Curated classic quote set",
+    "id": "chinese-057",
+    "author": "《警世贤文》· Maxims for the World",
+    "source": "《警世贤文》· Maxims for the World",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "The secret of getting ahead is getting started.",
-      "es": "El secreto para avanzar es empezar.",
-      "zh": "领先的秘诀是开始行动。"
+      "en": "A sword's edge comes from grinding; plum blossoms' fragrance comes from bitter cold.",
+      "es": "El filo de la espada nace del pulido; la fragancia del ciruelo, del frío intenso.",
+      "zh": "宝剑锋从磨砺出，梅花香自苦寒来。"
     }
   },
   {
-    "id": "mark-twain-061",
-    "author": "Mark Twain",
-    "source": "Curated classic quote set",
+    "id": "chinese-058",
+    "author": "《名贤集》· Collection of Maxims",
+    "source": "《名贤集》· Collection of Maxims",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Courage is resistance to fear, not absence of fear.",
-      "es": "El valor resiste al miedo; no lo elimina.",
-      "zh": "勇气是面对恐惧，而不是没有恐惧。"
+      "en": "However far the road, walking brings you there; however hard the task, doing completes it.",
+      "es": "Por lejos que esté el camino, andando se llega; por difícil que sea la tarea, haciéndola se cumple.",
+      "zh": "路虽远，行则将至；事虽难，做则必成。"
     }
   },
   {
-    "id": "mark-twain-062",
-    "author": "Mark Twain",
-    "source": "Curated classic quote set",
+    "id": "chinese-059",
+    "author": "《菜根谭》· Tending the Roots of Wisdom",
+    "source": "《菜根谭》· Tending the Roots of Wisdom",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Kindness is a language the deaf can hear and the blind can see.",
-      "es": "La bondad es un idioma que todos pueden percibir.",
-      "zh": "善良是聋者能听见、盲者能看见的语言。"
+      "en": "Untroubled by favor or disgrace, watch the flowers bloom and fall in the courtyard.",
+      "es": "Imperturbable ante el favor o el desprecio, contempla las flores del patio florecer y caer.",
+      "zh": "宠辱不惊，看庭前花开花落。"
     }
   },
   {
-    "id": "friedrich-nietzsche-063",
-    "author": "Friedrich Nietzsche",
-    "source": "Curated classic quote set",
+    "id": "chinese-060",
+    "author": "《朱子家训》· Zhu Xi's Family Instructions",
+    "source": "《朱子家训》· Zhu Xi's Family Instructions",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "He who has a why can bear almost any how.",
-      "es": "Quien tiene un porqué soporta casi cualquier cómo.",
-      "zh": "知道自己为什么而活的人，能忍受任何生活。"
+      "en": "For every bowl of porridge and every meal, remember how hard they were to come by.",
+      "es": "Por cada cuenco de gachas y cada comida, recuerda lo difícil que fue conseguirlos.",
+      "zh": "一粥一饭，当思来处不易。"
     }
   },
   {
-    "id": "friedrich-nietzsche-064",
-    "author": "Friedrich Nietzsche",
-    "source": "Curated classic quote set",
+    "id": "chinese-061",
+    "author": "孟郊 (Meng Jiao)",
+    "source": "《游子吟》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Become who you are.",
-      "es": "Llega a ser quien eres.",
-      "zh": "成为你自己。"
+      "en": "Who says a blade of grass can repay the warmth of spring sunshine?",
+      "es": "¿Quién dice que una brizna de hierba puede pagar el calor del sol primaveral?",
+      "zh": "谁言寸草心，报得三春晖。"
     }
   },
   {
-    "id": "friedrich-nietzsche-065",
-    "author": "Friedrich Nietzsche",
-    "source": "Curated classic quote set",
+    "id": "chinese-062",
+    "author": "王之涣 (Wang Zhihuan)",
+    "source": "《登鹳雀楼》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "No price is too high for the privilege of owning yourself.",
-      "es": "Ningún precio es alto por pertenecerte a ti mismo.",
-      "zh": "为了拥有自己的权利，付出什么代价都不算高。"
+      "en": "To see a thousand li farther, climb one more storey.",
+      "es": "Para ver mil li más lejos, sube un piso más.",
+      "zh": "欲穷千里目，更上一层楼。"
     }
   },
   {
-    "id": "johann-wolfgang-von-goethe-066",
-    "author": "Johann Wolfgang von Goethe",
-    "source": "Curated classic quote set",
+    "id": "chinese-063",
+    "author": "岑参 (Cen Shen)",
+    "source": "《白雪歌送武判官归京》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Whatever you can do, begin it.",
-      "es": "Todo lo que puedas hacer, empiézalo.",
-      "zh": "无论你能做什么，开始去做吧。"
+      "en": "As if a night of spring wind came, ten thousand pear trees burst into bloom.",
+      "es": "Como si una noche de viento primaveral hubiera hecho florecer diez mil perales.",
+      "zh": "忽如一夜春风来，千树万树梨花开。"
     }
   },
   {
-    "id": "johann-wolfgang-von-goethe-067",
-    "author": "Johann Wolfgang von Goethe",
-    "source": "Curated classic quote set",
+    "id": "chinese-064",
+    "author": "苏轼 (Su Shi)",
+    "source": "《题西林壁》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Correction does much, but encouragement does more.",
-      "es": "Corregir ayuda, animar ayuda más.",
-      "zh": "指正作用很大，但鼓励作用更大。"
+      "en": "You cannot see the true face of Mount Lu, for you are inside the mountain.",
+      "es": "No ves el verdadero rostro del monte Lu porque estás dentro de la montaña.",
+      "zh": "不识庐山真面目，只缘身在此山中。"
     }
   },
   {
-    "id": "johann-wolfgang-von-goethe-068",
-    "author": "Johann Wolfgang von Goethe",
-    "source": "Curated classic quote set",
+    "id": "chinese-065",
+    "author": "杨万里 (Yang Wanli)",
+    "source": "《晓出净慈寺送林子方》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Knowing is not enough; we must apply.",
-      "es": "Saber no basta; hay que aplicar.",
-      "zh": "知道还不够，必须去应用。"
+      "en": "Lotus leaves stretch to the sky in endless green; lotus flowers glow red in the sun.",
+      "es": "Las hojas de loto llegan al cielo en verde infinito; las flores brillan rojas al sol.",
+      "zh": "接天莲叶无穷碧，映日荷花别样红。"
     }
   },
   {
-    "id": "voltaire-069",
-    "author": "Voltaire",
-    "source": "Curated classic quote set",
+    "id": "chinese-066",
+    "author": "苏轼 (Su Shi)",
+    "source": "《水调歌头》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Judge a person by questions, not answers.",
-      "es": "Juzga a una persona por sus preguntas, no por sus respuestas.",
-      "zh": "看人要看他的问题，而不是他的答案。"
+      "en": "May we live long and share the bright moonlight across a thousand li.",
+      "es": "Que vivamos largos y compartamos la luna clara a través de mil li.",
+      "zh": "但愿人长久，千里共婵娟。"
     }
   },
   {
-    "id": "voltaire-070",
-    "author": "Voltaire",
-    "source": "Curated classic quote set",
+    "id": "chinese-067",
+    "author": "高适 (Gao Shi)",
+    "source": "《别董大》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Perfect is the enemy of good.",
-      "es": "Lo perfecto es enemigo de lo bueno.",
-      "zh": "完美是优秀的敌人。"
+      "en": "Worry not that ahead you have no friends; who in the world does not know you?",
+      "es": "No temas no tener amigos en el camino: ¿quién en el mundo no te conoce?",
+      "zh": "莫愁前路无知己，天下谁人不识君。"
     }
   },
   {
-    "id": "voltaire-071",
-    "author": "Voltaire",
-    "source": "Curated classic quote set",
+    "id": "chinese-068",
+    "author": "王维 (Wang Wei)",
+    "source": "《九月九日忆山东兄弟》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Appreciation is a wonderful thing.",
-      "es": "Apreciar es algo maravilloso.",
-      "zh": "欣赏是一种美好的品质。"
+      "en": "Alone in a strange land, I miss my kin twice as much on every festival.",
+      "es": "Solo en tierra extraña, en cada fiesta echo el doble de menos a los míos.",
+      "zh": "独在异乡为异客，每逢佳节倍思亲。"
     }
   },
   {
-    "id": "victor-hugo-072",
-    "author": "Victor Hugo",
-    "source": "Curated classic quote set",
+    "id": "chinese-069",
+    "author": "王维 (Wang Wei)",
+    "source": "《使至塞上》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Nothing is stronger than an idea whose time has come.",
-      "es": "Nada es más fuerte que una idea a la que le llegó su hora.",
-      "zh": "没有什么比时机成熟的思想更强大。"
+      "en": "A lone plume of smoke rises straight over the desert; the long river holds a round setting sun.",
+      "es": "Un humo solitario se alza recto sobre el desierto; el largo río sostiene un sol redondo al ponerse.",
+      "zh": "大漠孤烟直，长河落日圆。"
     }
   },
   {
-    "id": "victor-hugo-073",
-    "author": "Victor Hugo",
-    "source": "Curated classic quote set",
+    "id": "chinese-070",
+    "author": "白居易 (Bai Juyi)",
+    "source": "《赋得古原草送别》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Even the darkest night will end.",
-      "es": "Hasta la noche más oscura termina.",
-      "zh": "再黑的夜也会迎来黎明。"
+      "en": "Wildfire cannot burn it all; the spring wind makes it grow again.",
+      "es": "El fuego salvaje no puede quemarlo todo; el viento de primavera lo hace renacer.",
+      "zh": "野火烧不尽，春风吹又生。"
     }
   },
   {
-    "id": "victor-hugo-074",
-    "author": "Victor Hugo",
-    "source": "Curated classic quote set",
+    "id": "chinese-071",
+    "author": "白居易 (Bai Juyi)",
+    "source": "《琵琶行》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "To love beauty is to see light.",
-      "es": "Amar la belleza es ver la luz.",
-      "zh": "热爱美，就是看见光。"
+      "en": "Fellow travelers fallen to the world's edge — why need we have met before?",
+      "es": "Compañeros caídos al borde del mundo: ¿por qué necesitamos conocernos para encontrarnos?",
+      "zh": "同是天涯沦落人，相逢何必曾相识。"
     }
   },
   {
-    "id": "leo-tolstoy-075",
-    "author": "Leo Tolstoy",
-    "source": "Curated classic quote set",
+    "id": "chinese-072",
+    "author": "陶渊明 (Tao Yuanming)",
+    "source": "《饮酒》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "If you want to be happy, be.",
-      "es": "Si quieres ser feliz, sé feliz.",
-      "zh": "如果你想幸福，那就去幸福。"
+      "en": "Picking chrysanthemums by the eastern fence, I gaze idly at the southern hills.",
+      "es": "Recogiendo crisantemos junto al seto oriental, contemplo tranquilo los montes del sur.",
+      "zh": "采菊东篱下，悠然见南山。"
     }
   },
   {
-    "id": "leo-tolstoy-076",
-    "author": "Leo Tolstoy",
-    "source": "Curated classic quote set",
+    "id": "chinese-073",
+    "author": "陶渊明 (Tao Yuanming)",
+    "source": "《饮酒》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "The two most powerful warriors are patience and time.",
-      "es": "Los dos guerreros más fuertes son la paciencia y el tiempo.",
-      "zh": "最强大的两位战士是耐心和时间。"
+      "en": "The mountain air is fine at dusk; birds in flocks return together.",
+      "es": "El aire de la montaña es grato al atardecer; las aves vuelven juntas en bandadas.",
+      "zh": "山气日夕佳，飞鸟相与还。"
     }
   },
   {
-    "id": "leo-tolstoy-077",
-    "author": "Leo Tolstoy",
-    "source": "Curated classic quote set",
+    "id": "chinese-074",
+    "author": "王勃 (Wang Bo)",
+    "source": "《滕王阁序》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Everyone thinks of changing the world, but not himself.",
-      "es": "Todos piensan cambiar el mundo, no cambiarse a sí mismos.",
-      "zh": "人人都想改变世界，却没有人想改变自己。"
+      "en": "Sunset clouds fly with the lone wild duck; autumn water merges with the boundless sky.",
+      "es": "Las nubes del ocaso vuelan con el pato solitario; el agua otoñal se funde con el cielo infinito.",
+      "zh": "落霞与孤鹜齐飞，秋水共长天一色。"
     }
   },
   {
-    "id": "fyodor-dostoevsky-078",
-    "author": "Fyodor Dostoevsky",
-    "source": "Curated classic quote set",
+    "id": "chinese-075",
+    "author": "杜牧 (Du Mu)",
+    "source": "《山行》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Beauty will save the world.",
-      "es": "La belleza salvará el mundo.",
-      "zh": "美将拯救世界。"
+      "en": "I stop the carriage for the maple woods at dusk; frost leaves are redder than spring flowers.",
+      "es": "Detengo el carruaje por los arces al anochecer; sus hojas heladas, más rojas que las flores.",
+      "zh": "停车坐爱枫林晚，霜叶红于二月花。"
     }
   },
   {
-    "id": "fyodor-dostoevsky-079",
-    "author": "Fyodor Dostoevsky",
-    "source": "Curated classic quote set",
+    "id": "chinese-076",
+    "author": "杜牧 (Du Mu)",
+    "source": "《泊秦淮》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "To live without hope is to cease to live.",
-      "es": "Vivir sin esperanza es dejar de vivir.",
-      "zh": "没有希望地活着，就是停止了生活。"
+      "en": "The singers know no grief for a fallen land; across the river they still sing the court tunes.",
+      "es": "Las cantoras no sienten la caída del reino; al otro lado del río aún cantan las coplas.",
+      "zh": "商女不知亡国恨，隔江犹唱后庭花。"
     }
   },
   {
-    "id": "fyodor-dostoevsky-080",
-    "author": "Fyodor Dostoevsky",
-    "source": "Curated classic quote set",
+    "id": "chinese-077",
+    "author": "孟浩然 (Meng Haoran)",
+    "source": "《春晓》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Taking a new step is what people fear most.",
-      "es": "Dar un paso nuevo es lo que más se teme.",
-      "zh": "迈出新的一步，是大多数人最害怕的事。"
+      "en": "Sleeping in spring, I do not notice the dawn; everywhere I hear birds singing.",
+      "es": "Dormido en primavera no noto el amanecer; por doquier oigo cantar a los pájaros.",
+      "zh": "春眠不觉晓，处处闻啼鸟。"
     }
   },
   {
-    "id": "oscar-wilde-081",
-    "author": "Oscar Wilde",
-    "source": "Curated classic quote set",
+    "id": "chinese-078",
+    "author": "孟郊 (Meng Jiao)",
+    "source": "《游子吟》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Be yourself; everyone else is taken.",
-      "es": "Sé tú mismo; los demás ya están ocupados.",
-      "zh": "做你自己，因为别人都有人做了。"
+      "en": "Thread in the loving mother's hand, coat on the wandering son's back.",
+      "es": "El hilo en la mano de la madre, el abrigo en la espalda del hijo errante.",
+      "zh": "慈母手中线，游子身上衣。"
     }
   },
   {
-    "id": "oscar-wilde-082",
-    "author": "Oscar Wilde",
-    "source": "Curated classic quote set",
+    "id": "chinese-079",
+    "author": "谚语 (Proverb)",
+    "source": "民间谚语· Proverb",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Experience is the name we give our mistakes.",
-      "es": "Experiencia es el nombre que damos a los errores.",
-      "zh": "经验是我们给自己的错误起的名字。"
+      "en": "The sea is wide for fish to leap; the sky is high for birds to fly.",
+      "es": "El mar es ancho para que salten los peces; el cielo es alto para que vuelen las aves.",
+      "zh": "海阔凭鱼跃，天高任鸟飞。"
     }
   },
   {
-    "id": "oscar-wilde-083",
-    "author": "Oscar Wilde",
-    "source": "Curated classic quote set",
+    "id": "chinese-080",
+    "author": "李世民 (Li Shimin)",
+    "source": "《赐萧瑀》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "To define is to limit.",
-      "es": "Definir es limitar.",
-      "zh": "定义即是局限。"
+      "en": "Strong grass is known in fierce wind; loyal ministers are known in troubled times.",
+      "es": "La hierba firme se conoce en el viento feroz; los ministros leales, en los tiempos difíciles.",
+      "zh": "疾风知劲草，板荡识诚臣。"
     }
   },
   {
-    "id": "jane-austen-084",
-    "author": "Jane Austen",
-    "source": "Curated classic quote set",
+    "id": "chinese-081",
+    "author": "苏轼 (Su Shi)",
+    "source": "《江城子·密州出猎》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "There is no charm equal to tenderness of heart.",
-      "es": "No hay encanto igual a la ternura del corazón.",
-      "zh": "没有什么魅力比得上内心的温柔。"
+      "en": "I would draw my carved bow like a full moon, gaze northwest, and shoot the wolf star.",
+      "es": "Tensaré mi arco tallado como luna llena, miraré al noroeste y dispararé a la estrella lobo.",
+      "zh": "会挽雕弓如满月，西北望，射天狼。"
     }
   },
   {
-    "id": "jane-austen-085",
-    "author": "Jane Austen",
-    "source": "Curated classic quote set",
+    "id": "chinese-082",
+    "author": "秦观 (Qin Guan)",
+    "source": "《鹊桥仙》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Run mad as often as you choose, but do not faint.",
-      "es": "Enloquece si quieres, pero no te rindas.",
-      "zh": "你可以尽情疯狂，但不要倒下。"
+      "en": "If love between two lasts long, why must they be together morning and night?",
+      "es": "Si el amor entre dos es duradero, ¿por qué han de estar juntos mañana y noche?",
+      "zh": "两情若是久长时，又岂在朝朝暮暮。"
     }
   },
   {
-    "id": "jane-austen-086",
-    "author": "Jane Austen",
-    "source": "Curated classic quote set",
+    "id": "chinese-083",
+    "author": "柳永 (Liu Yong)",
+    "source": "《蝶恋花》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Self-knowledge is the first step to maturity.",
-      "es": "Conocerse es el primer paso hacia la madurez.",
-      "zh": "认识自己是走向成熟的第一步。"
+      "en": "My belt grows loose, yet I regret nothing; for her I waste away.",
+      "es": "Mi cinturón se afloja y no me arrepiento; por ella me voy consumiendo.",
+      "zh": "衣带渐宽终不悔，为伊消得人憔悴。"
     }
   },
   {
-    "id": "charles-dickens-087",
-    "author": "Charles Dickens",
-    "source": "Curated classic quote set",
+    "id": "chinese-084",
+    "author": "辛弃疾 (Xin Qiji)",
+    "source": "《青玉案·元夕》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "No one is useless who lightens another burden.",
-      "es": "Nadie es inútil si aligera la carga de otra persona.",
-      "zh": "能为他人减轻负担的人，无一无用。"
+      "en": "I searched for her a thousand times; turning back suddenly, she stood where the lanterns were few.",
+      "es": "La busqué mil veces entre la multitud; al volverme, estaba donde las luces escaseaban.",
+      "zh": "众里寻他千百度，蓦然回首，那人却在灯火阑珊处。"
     }
   },
   {
-    "id": "charles-dickens-088",
-    "author": "Charles Dickens",
-    "source": "Curated classic quote set",
+    "id": "chinese-085",
+    "author": "辛弃疾 (Xin Qiji)",
+    "source": "《破阵子》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Have a heart that never hardens.",
-      "es": "Ten un corazón que nunca se endurezca.",
-      "zh": "拥有一颗永不冷漠的心。"
+      "en": "In drunkenness I trim the lamp and view my sword; in dreams I hear camp horns.",
+      "es": "Ebrio, atizo la lámpara y miro mi espada; en sueños oigo las cornetas.",
+      "zh": "醉里挑灯看剑，梦回吹角连营。"
     }
   },
   {
-    "id": "charles-dickens-089",
-    "author": "Charles Dickens",
-    "source": "Curated classic quote set",
+    "id": "chinese-086",
+    "author": "陆游 (Lu You)",
+    "source": "《示儿》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "There is wisdom of the head and wisdom of the heart.",
-      "es": "Hay sabiduría de la cabeza y del corazón.",
-      "zh": "头脑有头脑的智慧，心灵有心灵的智慧。"
+      "en": "When the royal army retakes the Central Plains, tell your father at the family rites.",
+      "es": "Cuando el ejército real recupere las llanuras del norte, cuéntalo a tu padre en el ritual familiar.",
+      "zh": "王师北定中原日，家祭无忘告乃翁。"
     }
   },
   {
-    "id": "george-eliot-090",
-    "author": "George Eliot",
-    "source": "Curated classic quote set",
+    "id": "chinese-087",
+    "author": "杨万里 (Yang Wanli)",
+    "source": "《小池》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "It is never too late to be what you might have been.",
-      "es": "Nunca es tarde para ser quien podrías haber sido.",
-      "zh": "成为你本可以成为的人，永远都不晚。"
+      "en": "A tender lotus bud shows its tip; a dragonfly already stands upon it.",
+      "es": "Un tierno brote de loto asoma su punta; una libélula ya se posa en él.",
+      "zh": "小荷才露尖尖角，早有蜻蜓立上头。"
     }
   },
   {
-    "id": "george-eliot-091",
-    "author": "George Eliot",
-    "source": "Curated classic quote set",
+    "id": "chinese-088",
+    "author": "王维 (Wang Wei)",
+    "source": "《山居秋暝》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Wear a smile and have friends.",
-      "es": "Lleva una sonrisa y tendrás amigos.",
-      "zh": "面带微笑，朋友自来。"
+      "en": "Bright moonlight shines through the pines; clear springs flow over the stones.",
+      "es": "La luna clara brilla entre los pinos; los manantiales fluyen sobre las piedras.",
+      "zh": "明月松间照，清泉石上流。"
     }
   },
   {
-    "id": "george-eliot-092",
-    "author": "George Eliot",
-    "source": "Curated classic quote set",
+    "id": "chinese-089",
+    "author": "苏轼 (Su Shi)",
+    "source": "《惠崇春江晚景》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Great things are not done by impulse.",
-      "es": "Las grandes cosas no se hacen por impulso.",
-      "zh": "伟大的事不是凭一时冲动完成的。"
+      "en": "Two or three peach blossoms beyond the bamboo; the ducks first feel the spring river warming.",
+      "es": "Dos o tres flores de melocotón tras el bambú; los patos sienten primero el río primaveral calentarse.",
+      "zh": "竹外桃花三两枝，春江水暖鸭先知。"
     }
   },
   {
-    "id": "sun-tzu-093",
-    "author": "Sun Tzu",
-    "source": "Curated classic quote set",
+    "id": "chinese-090",
+    "author": "柳宗元 (Liu Zongyuan)",
+    "source": "《江雪》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "In the midst of chaos, there is opportunity.",
-      "es": "En medio del caos hay oportunidad.",
-      "zh": "混乱之中，蕴藏机遇。"
+      "en": "Birds have vanished from a thousand peaks; footprints are gone from ten thousand trails.",
+      "es": "Las aves han desaparecido de mil cumbres; las huellas, de diez mil senderos.",
+      "zh": "千山鸟飞绝，万径人踪灭。"
     }
   },
   {
-    "id": "sun-tzu-094",
-    "author": "Sun Tzu",
-    "source": "Curated classic quote set",
+    "id": "chinese-091",
+    "author": "柳宗元 (Liu Zongyuan)",
+    "source": "《江雪》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Build your opponent a golden bridge to retreat across.",
-      "es": "Construye un puente digno para que el rival pueda retirarse.",
-      "zh": "给你的对手搭一座撤退的金桥。"
+      "en": "A lone boat, an old man in straw cloak, fishing alone in the snow on the cold river.",
+      "es": "Una barca solitaria, un anciano de capa de paja, pescando a solas en el río nevado.",
+      "zh": "孤舟蓑笠翁，独钓寒江雪。"
     }
   },
   {
-    "id": "sun-tzu-095",
-    "author": "Sun Tzu",
-    "source": "Curated classic quote set",
+    "id": "chinese-092",
+    "author": "李白 (Li Bai)",
+    "source": "《静夜思》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Know yourself and you will win all battles.",
-      "es": "Conócete y ganarás todas las batallas.",
-      "zh": "认识自己，方能百战百胜。"
+      "en": "I raise my head to view the bright moon; I lower it and think of home.",
+      "es": "Alzo la cabeza hacia la luna clara; la bajo y pienso en mi tierra natal.",
+      "zh": "举头望明月，低头思故乡。"
     }
   },
   {
-    "id": "buddha-096",
-    "author": "Buddha",
-    "source": "Curated classic quote set",
+    "id": "chinese-093",
+    "author": "李白 (Li Bai)",
+    "source": "《赠汪伦》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "What you think, you become.",
-      "es": "En lo que piensas, te conviertes.",
-      "zh": "你思即你所成。"
+      "en": "Though the Peach Blossom Pool is a thousand feet deep, it cannot match Wang Lun's farewell.",
+      "es": "Aunque el estanque tenga mil pies de hondura, no iguala el adiós de Wang Lun.",
+      "zh": "桃花潭水深千尺，不及汪伦送我情。"
     }
   },
   {
-    "id": "buddha-097",
-    "author": "Buddha",
-    "source": "Curated classic quote set",
+    "id": "chinese-094",
+    "author": "张九龄 (Zhang Jiuling)",
+    "source": "《送韦城李少府》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Peace comes from within.",
-      "es": "La paz viene de dentro.",
-      "zh": "平静来自内心。"
+      "en": "True friends know no distance; ten thousand li still make neighbors.",
+      "es": "Los verdaderos amigos no conocen la distancia; diez mil li siguen siendo vecindad.",
+      "zh": "相知无远近，万里尚为邻。"
     }
   },
   {
-    "id": "buddha-098",
-    "author": "Buddha",
-    "source": "Curated classic quote set",
+    "id": "chinese-095",
+    "author": "辛弃疾 (Xin Qiji)",
+    "source": "《菩萨蛮·书江西造口壁》",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "No one saves us but ourselves.",
-      "es": "Nadie nos salva salvo nosotros mismos.",
-      "zh": "能救我们的，只有我们自己。"
+      "en": "Green hills cannot hold it back; the river flows eastward all the same.",
+      "es": "Los montes verdes no pueden contenerlo; el río fluye hacia el este de todos modos.",
+      "zh": "青山遮不住，毕竟东流去。"
     }
   },
   {
-    "id": "aesop-099",
-    "author": "Aesop",
-    "source": "Curated classic quote set",
+    "id": "chinese-096",
+    "author": "谚语 (Proverb)",
+    "source": "民间谚语· Proverb",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "Slow but steady wins the race.",
-      "es": "Lento pero constante gana la carrera.",
-      "zh": "慢而稳，赛必胜。"
+      "en": "When hearts are united, even Mount Tai can be moved.",
+      "es": "Cuando los corazones se unen, hasta el monte Tai se puede mover.",
+      "zh": "人心齐，泰山移。"
     }
   },
   {
-    "id": "aesop-100",
-    "author": "Aesop",
-    "source": "Curated classic quote set",
+    "id": "chinese-097",
+    "author": "《三国志》· Records of the Three Kingdoms",
+    "source": "《三国志》· Records of the Three Kingdoms",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "No act of kindness is ever wasted.",
-      "es": "Ningún acto de bondad se desperdicia.",
-      "zh": "每一次善举都不会白费。"
+      "en": "Read a book a hundred times, and its meaning reveals itself.",
+      "es": "Lee un libro cien veces y su sentido se revela por sí solo.",
+      "zh": "读书百遍，其义自见。"
     }
   },
   {
-    "id": "aesop-101",
-    "author": "Aesop",
-    "source": "Curated classic quote set",
+    "id": "chinese-098",
+    "author": "孔子 (Confucius)",
+    "source": "《论语》· Analects",
     "tags": [
       "classic",
       "short",
       "daily"
     ],
     "text": {
-      "en": "United we stand, divided we fall.",
-      "es": "Unidos resistimos, divididos caemos.",
-      "zh": "团结则存，分裂则亡。"
+      "en": "Quick-witted and fond of learning, never ashamed to ask those beneath you.",
+      "es": "Agudo y amante del estudio, sin vergüenza de preguntar a los inferiores.",
+      "zh": "敏而好学，不耻下问。"
+    }
+  },
+  {
+    "id": "chinese-099",
+    "author": "《左传》· Zuo Zhuan",
+    "source": "《左传》· Zuo Zhuan",
+    "tags": [
+      "classic",
+      "short",
+      "daily"
+    ],
+    "text": {
+      "en": "In safety, think of danger; thinking brings preparation; preparation prevents disaster.",
+      "es": "En la seguridad, piensa en el peligro; pensar lleva a prepararse; prepararse evita el desastre.",
+      "zh": "居安思危，思则有备，有备无患。"
+    }
+  },
+  {
+    "id": "chinese-100",
+    "author": "孙子 (Sun Tzu)",
+    "source": "《孙子兵法》· Art of War",
+    "tags": [
+      "classic",
+      "short",
+      "daily"
+    ],
+    "text": {
+      "en": "Know yourself and know your enemy, and you will never be defeated in a hundred battles.",
+      "es": "Conócete y conoce a tu enemigo, y no serás derrotado en cien batallas.",
+      "zh": "知己知彼，百战不殆。"
+    }
+  },
+  {
+    "id": "chinese-101",
+    "author": "孟子 (Mencius)",
+    "source": "《孟子》· Mencius",
+    "tags": [
+      "classic",
+      "short",
+      "daily"
+    ],
+    "text": {
+      "en": "Timing is less important than terrain; terrain is less important than unity.",
+      "es": "El momento es menos importante que el terreno; el terreno, menos que la unión.",
+      "zh": "天时不如地利，地利不如人和。"
+    }
+  },
+  {
+    "id": "chinese-102",
+    "author": "谚语 (Proverb)",
+    "source": "民间谚语· Proverb",
+    "tags": [
+      "classic",
+      "short",
+      "daily"
+    ],
+    "text": {
+      "en": "Give a man a fish, feed him a day; teach him to fish, feed him for life.",
+      "es": "Da a un hombre un pez y comerá un día; enséñale a pescar y comerá siempre.",
+      "zh": "授人以鱼，不如授人以渔。"
+    }
+  },
+  {
+    "id": "chinese-103",
+    "author": "《增广贤文》· Augmented Maxims",
+    "source": "《增广贤文》· Augmented Maxims",
+    "tags": [
+      "classic",
+      "short",
+      "daily"
+    ],
+    "text": {
+      "en": "You regret reading too little when you need it; you never know difficulty until you have lived it.",
+      "es": "Lamentas haber leído poco cuando lo necesitas; no conoces la dificultad hasta haberla vivido.",
+      "zh": "书到用时方恨少，事非经过不知难。"
+    }
+  },
+  {
+    "id": "chinese-104",
+    "author": "刘禹锡 (Liu Yuxi)",
+    "source": "《陋室铭》",
+    "tags": [
+      "classic",
+      "short",
+      "daily"
+    ],
+    "text": {
+      "en": "A mountain need not be high; with immortals it becomes famous.",
+      "es": "Una montaña no necesita ser alta; con inmortales se hace famosa.",
+      "zh": "山不在高，有仙则名。"
+    }
+  },
+  {
+    "id": "chinese-105",
+    "author": "王之涣 (Wang Zhihuan)",
+    "source": "《凉州词》",
+    "tags": [
+      "classic",
+      "short",
+      "daily"
+    ],
+    "text": {
+      "en": "Why should the flute complain of willows? Spring wind never passes Jade Gate Pass.",
+      "es": "¿Por qué la flauta se queja de los sauces? La brisa no cruza la Puerta de Jade.",
+      "zh": "羌笛何须怨杨柳，春风不度玉门关。"
     }
   }
 ]

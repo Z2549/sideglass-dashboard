@@ -88,7 +88,7 @@ export function NotesWidget() {
                 type="button"
                 onClick={() => deleteNote(note.id)}
                 className="mt-0.5 opacity-0 transition-opacity group-hover:opacity-100"
-                aria-label="Eliminar"
+                aria-label={t("notes.delete")}
               >
                 <Trash2 className="h-3.5 w-3.5 text-destructive/70 hover:text-destructive" />
               </button>

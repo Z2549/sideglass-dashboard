@@ -76,6 +76,7 @@ export function TimeWeatherWidget() {
           city: settings.weatherCity,
           useAutoLocation: settings.useAutoLocation,
           tempUnit: settings.tempUnit,
+          lang,
         })
         setWeather(data)
       } catch {
@@ -87,17 +88,25 @@ export function TimeWeatherWidget() {
     load()
     const interval = setInterval(load, 600_000)
     return () => clearInterval(interval)
-  }, [mounted, settings.weatherCity, settings.useAutoLocation, settings.tempUnit])
+  }, [mounted, settings.weatherCity, settings.useAutoLocation, settings.tempUnit, lang])
 
-  const locale = lang === "es" ? "es-ES" : "en-US"
+  const locale = lang === "es" ? "es-ES" : lang === "zh" ? "zh-CN" : "en-US"
   const use12h = settings.timeFormat === "12"
 
-  const formatTime = (date: Date) =>
-    date.toLocaleTimeString(locale, {
+  const formatTime = (date: Date) => {
+    if (lang === "zh") {
+      const hh = String(date.getHours()).padStart(2, "0")
+      const mm = String(date.getMinutes()).padStart(2, "0")
+      if (!use12h) return `${hh}:${mm}`
+      const h12 = String(((date.getHours() + 11) % 12) + 1).padStart(2, "0")
+      return `${date.getHours() < 12 ? "上午" : "下午"} ${h12}:${mm}`
+    }
+    return date.toLocaleTimeString(locale, {
       hour: "2-digit",
       minute: "2-digit",
       hour12: use12h,
     })
+  }
 
   const formatDate = (date: Date) =>
     date.toLocaleDateString(locale, {
@@ -112,9 +121,12 @@ export function TimeWeatherWidget() {
     const target = settings.useAutoLocation
       ? `${weather.latitude.toFixed(4)},${weather.longitude.toFixed(4)}`
       : weather.city
-    await openExternalUrl(
-      `https://www.google.com/search?q=${encodeURIComponent(`weather ${target}`)}`
-    )
+    // Google is not reachable from mainland China; zh users get a domestic weather search.
+    const url =
+      lang === "zh"
+        ? `https://www.baidu.com/s?wd=${encodeURIComponent(`天气 ${target}`)}`
+        : `https://www.google.com/search?q=${encodeURIComponent(`weather ${target}`)}`
+    await openExternalUrl(url)
   }
 
   return (

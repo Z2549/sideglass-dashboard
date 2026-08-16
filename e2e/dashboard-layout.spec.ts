@@ -210,7 +210,7 @@ test.describe("dashboard layout width", () => {
     await expect(page.locator(".dashboard-resize-handle")).toHaveCount(6)
   })
 
-  test("reset layout keeps calendar and youtube content inside cards", async ({ page }) => {
+  test("reset layout keeps calendar and video content inside cards", async ({ page }) => {
     await expect(page.locator(".calendar-event-row")).toHaveCount(3)
     await page.getByTestId("customize-layout").dispatchEvent("click")
     await page.getByRole("button", { name: "Restablecer layout" }).click()
@@ -288,7 +288,7 @@ test.describe("first-run responsive defaults", () => {
 
     await page.locator(".time-weather-panel").click()
     await page.getByTitle("Google Calendar").click()
-    await page.getByTitle("YouTube").click()
+    await page.getByTitle("Bilibili").click()
 
     const urls = await page.evaluate(
       () => (window as unknown as { __openedUrls?: string[] }).__openedUrls ?? []
@@ -297,7 +297,7 @@ test.describe("first-run responsive defaults", () => {
       true
     )
     expect(urls).toContain("https://calendar.google.com/calendar/u/0/r")
-    expect(urls).toContain("https://www.youtube.com/")
+    expect(urls).toContain("https://www.bilibili.com/")
   })
 
   test("manual weather city selection fills the input", async ({ page }) => {

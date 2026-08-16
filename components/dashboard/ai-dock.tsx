@@ -29,6 +29,12 @@ function useIsDarkUi() {
   return isDark
 }
 
+const DOCK_SIZE_CLASSES = {
+  sm: { button: "w-10 h-10", icon: "w-6 h-6" },
+  md: { button: "w-12 h-12 sm:w-14 sm:h-14", icon: "w-7 h-7 sm:w-8 sm:h-8" },
+  lg: { button: "w-14 h-14 sm:w-16 sm:h-16", icon: "w-8 h-8 sm:w-10 sm:h-10" },
+} as const
+
 export function AIDock() {
   const [hoveredApp, setHoveredApp] = useState<string | null>(null)
   const isDark = useIsDarkUi()
@@ -36,13 +42,16 @@ export function AIDock() {
 
   if (!settings.showAi) return null
 
+  const visibleApps = AI_APPS.filter((app) => !settings.hiddenAiApps.includes(app.id))
+  const sizeClass = DOCK_SIZE_CLASSES[settings.aiDockSize]
+
   return (
     <footer
       className="dashboard-dock-row shrink-0 z-40 w-full border-t border-border/50 px-2 pt-3 pb-5 flex justify-center pointer-events-none"
       aria-label="AI apps"
     >
-      <div className="dock-glass rounded-2xl px-3 py-2.5 flex items-end justify-center gap-1.5 pointer-events-auto w-fit max-w-md">
-        {AI_APPS.map((app) => {
+      <div className="dock-glass rounded-2xl px-3 py-2.5 flex items-end justify-center gap-1.5 pointer-events-auto w-fit max-w-2xl flex-wrap">
+        {visibleApps.map((app) => {
           const isHovered = hoveredApp === app.id
           const iconSrc = resolveAiIconSrc(app.icon, isDark)
           return (
@@ -63,12 +72,12 @@ export function AIDock() {
                 bg-muted/40 border border-border/60
                 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]
                 ${isHovered ? "scale-125 -translate-y-2 shadow-lg" : "scale-100 hover:scale-110 hover:-translate-y-1"}
-                w-12 h-12 sm:w-14 sm:h-14
+                ${sizeClass.button}
               `}
               title={app.name}
               aria-label={app.name}
             >
-              <AiBrandIcon src={iconSrc} className="w-7 h-7 sm:w-8 sm:h-8 object-contain" />
+              <AiBrandIcon src={iconSrc} className={`${sizeClass.icon} object-contain`} />
 
               <span
                 className={`
