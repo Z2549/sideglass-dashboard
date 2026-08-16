@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-create-or-update-ai-webview"
+description = "Enables the create_or_update_ai_webview command without any pre-configured scope."
+commands.allow = ["create_or_update_ai_webview"]
+
+[[permission]]
+identifier = "deny-create-or-update-ai-webview"
+description = "Denies the create_or_update_ai_webview command without any pre-configured scope."
+commands.deny = ["create_or_update_ai_webview"]

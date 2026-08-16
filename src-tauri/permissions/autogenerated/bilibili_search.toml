@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-bilibili-search"
+description = "Enables the bilibili_search command without any pre-configured scope."
+commands.allow = ["bilibili_search"]
+
+[[permission]]
+identifier = "deny-bilibili-search"
+description = "Denies the bilibili_search command without any pre-configured scope."
+commands.deny = ["bilibili_search"]

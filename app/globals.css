@@ -952,18 +952,16 @@
   }
 }
 
-/* Short windows: instead of crushing widgets into a few pixels, switch to
-   natural-height rows and let the page scroll, keeping clearance above the
-   AI dock so modules are never squeezed or covered. */
-@media (max-height: 700px) {
-  .dashboard-scroll {
-    padding-bottom: clamp(4.25rem, 8.5vh, 6.5rem);
-  }
-
-  .dashboard-grid {
-    height: auto;
-    min-height: 100%;
-    grid-auto-rows: minmax(1.6rem, auto);
+/* Fit shorter windows (720p monitors, DPI-scaled 1080p, etc.) by scaling the
+   whole dashboard: the shell lays out at the 900px design reference and is
+   zoomed down to the real viewport. Widgets keep their proportions (clock,
+   dock, spacing) instead of being crushed, oversized, or pushed under the
+   dock — nothing scrolls and nothing overlaps. */
+@media (max-height: 899px) {
+  .dashboard-shell {
+    --fit-zoom: calc(100dvh / 900px);
+    height: calc(100dvh / var(--fit-zoom));
+    zoom: var(--fit-zoom);
   }
 }
 

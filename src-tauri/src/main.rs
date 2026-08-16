@@ -1190,6 +1190,125 @@ async fn open_url(url: String) -> Result<(), String> {
     tauri_plugin_opener::open_url(&url, None::<&str>).map_err(|e| e.to_string())
 }
 
+fn weather_http_client() -> Result<reqwest::Client, String> {
+    reqwest::Client::builder()
+        .timeout(std::time::Duration::from_secs(15))
+        .user_agent("Sideglass/0.2.36")
+        .build()
+        .map_err(|e| e.to_string())
+}
+
+async fn open_meteo_json(client: &reqwest::Client, url: &str) -> Option<serde_json::Value> {
+    let resp = client.get(url).send().await.ok()?;
+    if !resp.status().is_success() {
+        return None;
+    }
+    serde_json::from_str(&resp.text().await.ok()?).ok()
+}
+
+#[derive(Serialize, Clone)]
+struct GeocodeResult {
+    lat: f64,
+    lon: f64,
+    name: String,
+}
+
+/// City search used by the weather widget. Runs in Rust so the Tauri webview
+/// never hits CORS issues with the geocoding API (blocked for tauri.localhost).
+#[tauri::command]
+async fn geocode_city(city: String, lang: String) -> Result<Option<GeocodeResult>, String> {
+    let client = weather_http_client()?;
+    let primary = city.split(',').next().unwrap_or("").trim();
+    if primary.len() < 2 {
+        return Ok(None);
+    }
+    let url = reqwest::Url::parse_with_params(
+        "https://geocoding-api.open-meteo.com/v1/search",
+        &[("name", primary), ("count", "10"), ("language", lang.as_str()), ("format", "json")],
+    )
+    .map_err(|e| e.to_string())?;
+    let json = open_meteo_json(&client, url.as_str()).await;
+    let results = json
+        .as_ref()
+        .and_then(|j| j.get("results"))
+        .and_then(|r| r.as_array());
+    let Some(results) = results else { return Ok(None) };
+    if results.is_empty() {
+        return Ok(None);
+    }
+    let first = &results[0];
+    let (Some(lat), Some(lon), Some(name)) = (
+        first.get("latitude").and_then(|v| v.as_f64()),
+        first.get("longitude").and_then(|v| v.as_f64()),
+        first.get("name").and_then(|v| v.as_str()),
+    ) else {
+        return Ok(None);
+    };
+    Ok(Some(GeocodeResult {
+        lat,
+        lon,
+        name: name.to_string(),
+    }))
+}
+
+/// Reverse geocoding for automatic location. Also runs in Rust (no CORS).
+#[tauri::command]
+async fn reverse_geocode(lat: f64, lon: f64, lang: String) -> Result<Option<String>, String> {
+    let client = weather_http_client()?;
+    let url = format!(
+        "https://geocoding-api.open-meteo.com/v1/reverse?latitude={lat}&longitude={lon}&language={lang}"
+    );
+    let json = open_meteo_json(&client, &url).await;
+    let name = json
+        .as_ref()
+        .and_then(|j| j.get("results"))
+        .and_then(|r| r.as_array())
+        .and_then(|a| a.first())
+        .and_then(|r| r.get("name"))
+        .and_then(|n| n.as_str())
+        .map(|s| s.to_string());
+    Ok(name)
+}
+
+#[derive(Serialize, Clone)]
+struct WeatherForecast {
+    temp: f64,
+    humidity: f64,
+    feels_like: f64,
+    weather_code: i64,
+}
+
+/// Current weather forecast. Rust-side fetch avoids webview CORS issues.
+#[tauri::command]
+async fn fetch_weather_forecast(
+    lat: f64,
+    lon: f64,
+    temp_unit: String,
+) -> Result<Option<WeatherForecast>, String> {
+    let unit = if temp_unit == "fahrenheit" { "fahrenheit" } else { "celsius" };
+    let client = weather_http_client()?;
+    let url = format!(
+        "https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code&temperature_unit={unit}"
+    );
+    let json = open_meteo_json(&client, &url).await;
+    let c = json.as_ref().and_then(|j| j.get("current"));
+    let Some(c) = c else { return Ok(None) };
+    let (Some(temp), Some(humidity), Some(feels_like), Some(weather_code)) = (
+        c.get("temperature_2m").and_then(|v| v.as_f64()),
+        c.get("relative_humidity_2m").and_then(|v| v.as_f64()),
+        c.get("apparent_temperature").and_then(|v| v.as_f64()),
+        c.get("weather_code").and_then(|v| v.as_i64()),
+    ) else {
+        return Ok(None);
+    };
+    Ok(Some(WeatherForecast {
+        temp,
+        humidity,
+        feels_like,
+        weather_code,
+    }))
+}
+
 #[derive(Serialize, Clone)]
 pub struct BilibiliResult {
     pub id: String,
@@ -1981,6 +2100,9 @@ fn main() {
             fetch_ical,
             open_url,
             bilibili_search,
+            geocode_city,
+            reverse_geocode,
+            fetch_weather_forecast,
             toggle_main_window,
             set_autostart,
             register_global_hotkey,

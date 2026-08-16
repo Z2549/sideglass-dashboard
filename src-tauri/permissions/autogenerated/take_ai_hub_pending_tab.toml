@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-take-ai-hub-pending-tab"
+description = "Enables the take_ai_hub_pending_tab command without any pre-configured scope."
+commands.allow = ["take_ai_hub_pending_tab"]
+
+[[permission]]
+identifier = "deny-take-ai-hub-pending-tab"
+description = "Denies the take_ai_hub_pending_tab command without any pre-configured scope."
+commands.deny = ["take_ai_hub_pending_tab"]

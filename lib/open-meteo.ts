@@ -1,3 +1,5 @@
+import { invokeCommand, isTauri } from "@/lib/tauri"
+
 export interface WeatherResult {
   temp: number
   condition: string
@@ -7,6 +9,34 @@ export interface WeatherResult {
   feelsLike: number
   latitude: number
   longitude: number
+}
+
+/** Geocoding in the Tauri app runs in Rust (the geocoding API blocks the
+ *  tauri.localhost origin with CORS, which made the widget fail in the app). */
+async function geocodeTauri(
+  city: string,
+  lang: WeatherLang
+): Promise<{ lat: number; lon: number; name: string } | null> {
+  try {
+    return await invokeCommand<{ lat: number; lon: number; name: string } | null>("geocode_city", {
+      city,
+      lang,
+    })
+  } catch {
+    return null
+  }
+}
+
+async function reverseGeocodeTauri(
+  lat: number,
+  lon: number,
+  lang: WeatherLang
+): Promise<string | null> {
+  try {
+    return await invokeCommand<string | null>("reverse_geocode", { lat, lon, lang })
+  } catch {
+    return null
+  }
 }
 
 export type WeatherLang = "es" | "en" | "zh"
@@ -189,6 +219,15 @@ async function geocode(
   const primaryName = trimmed.split(",")[0]?.trim() || trimmed
   if (primaryName.length < 2) return null
 
+  if (isTauri()) {
+    // Try the user's language first, then fall back to neutral languages.
+    for (const candidate of [lang, "en", "es"] as WeatherLang[]) {
+      const result = await geocodeTauri(primaryName, candidate)
+      if (result) return result
+    }
+    return null
+  }
+
   const data = await fetchJson<{ results?: GeocodingResult[] }>(
     `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(primaryName)}&count=10&language=${lang}&format=json`
   )
@@ -209,6 +248,9 @@ async function geocode(
 }
 
 async function reverseGeocode(lat: number, lon: number, lang: WeatherLang): Promise<string | null> {
+  if (isTauri()) {
+    return reverseGeocodeTauri(lat, lon, lang)
+  }
   const data = await fetchJson<{ results?: { name?: string }[] }>(
     `https://geocoding-api.open-meteo.com/v1/reverse?latitude=${lat}&longitude=${lon}&language=${lang}`
   )
@@ -266,18 +308,59 @@ export async function fetchWeather(options: {
   }
 
   const tempUnit = options.tempUnit === "fahrenheit" ? "fahrenheit" : "celsius"
-  const data = await fetchJson<{
-    current?: {
-      temperature_2m: number
-      relative_humidity_2m: number
-      apparent_temperature: number
-      weather_code: number
+
+  type ForecastCurrent = {
+    temperature_2m: number
+    relative_humidity_2m: number
+    apparent_temperature: number
+    weather_code: number
+  }
+  let current: ForecastCurrent | null = null
+  if (isTauri()) {
+    // Rust-side fetch: no webview CORS issues. The command returns
+    // {temp, humidity, feels_like, weather_code}; map to open-meteo names.
+    const fromRust = (r: unknown): ForecastCurrent => {
+      const x = r as Record<string, number | undefined>
+      return {
+        temperature_2m: x.temperature_2m ?? x.temp ?? Number.NaN,
+        relative_humidity_2m: x.relative_humidity_2m ?? x.humidity ?? Number.NaN,
+        apparent_temperature: x.apparent_temperature ?? x.feels_like ?? Number.NaN,
+        weather_code: x.weather_code ?? 0,
+      }
     }
-  }>(
-    `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code&temperature_unit=${tempUnit}`
-  )
-  const c = data?.current
-  if (!c) throw new Error("Forecast failed")
+    try {
+      current = fromRust(
+        await invokeCommand<ForecastCurrent>("fetch_weather_forecast", {
+          lat,
+          lon,
+          tempUnit,
+        })
+      )
+    } catch {
+      current = null
+    }
+    // One retry — transient network failures are common for CN users.
+    if (!current) {
+      try {
+        current = fromRust(
+          await invokeCommand<ForecastCurrent>("fetch_weather_forecast", {
+            lat,
+            lon,
+            tempUnit,
+          })
+        )
+      } catch {
+        current = null
+      }
+    }
+  } else {
+    const data = await fetchJson<{ current?: ForecastCurrent }>(
+      `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code&temperature_unit=${tempUnit}`
+    )
+    current = data?.current ?? null
+  }
+  if (!current) throw new Error("Forecast failed")
+  const c = current
 
   const code = c.weather_code as number
 

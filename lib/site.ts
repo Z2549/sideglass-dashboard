@@ -20,7 +20,7 @@ export const SITE_URL = resolveSiteUrl()
 export const APP_NAME = "Sideglass"
 export const APP_TAGLINE = "Panel para tu monitor secundario"
 
-export const GITHUB_REPO = "https://github.com/moisesvalero/sideglass-dashboard"
+export const GITHUB_REPO = "https://github.com/Z2549/sideglass-dashboard"
 export const GITHUB_ISSUES_NEW = `${GITHUB_REPO}/issues/new`
 
 /** PayPal donate link (business email). */
@@ -33,7 +33,7 @@ export const WINDOWS_INSTALLER_URL = `${GITHUB_REPO}/releases/latest/download/${
 
 export const GITHUB_RELEASES = `${GITHUB_REPO}/releases/latest`
 export const LICENSE_URL = `${GITHUB_REPO}/blob/main/LICENSE`
-export const APP_VERSION = "0.2.35"
+export const APP_VERSION = "0.2.36"
 
 export const AUTHOR_NAME = "Moises Valero"
 export const AUTHOR_SITE = "https://moisesvalero.es"

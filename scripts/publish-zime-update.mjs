@@ -27,8 +27,8 @@ const OUT = join(ROOT, "zime-update")
 
 const REPO = "Z2549/sideglass-dashboard"
 const BRANCH = "Zime"
-const CDN = (file) => `https://cdn.jsdelivr.net/gh/${REPO}@${BRANCH}/${file}`
-const RAW = (file) => `https://raw.githubusercontent.com/${REPO}/${BRANCH}/${file}`
+const CDN = (file) => `https://cdn.jsdelivr.net/gh/${REPO}@${BRANCH}/zime-update/${file}`
+const RAW = (file) => `https://raw.githubusercontent.com/${REPO}/${BRANCH}/zime-update/${file}`
 
 if (!existsSync(BUNDLE)) {
   console.error(`bundle dir not found: ${BUNDLE}`)
@@ -36,14 +36,15 @@ if (!existsSync(BUNDLE)) {
   process.exit(1)
 }
 
-const installer = readdirSync(BUNDLE).find((f) => f.endsWith("-setup.exe"))
+const config = JSON.parse(readFileSync(join(ROOT, "src-tauri", "tauri.conf.json"), "utf8"))
+const version = config.version
+const prefix = `Sideglass_${version}_x64`
+const installer = readdirSync(BUNDLE).find((f) => f.startsWith(prefix) && f.endsWith("-setup.exe"))
 if (!installer) {
-  console.error("NSIS installer not found in", BUNDLE)
+  console.error(`NSIS installer for v${version} not found in`, BUNDLE)
   process.exit(1)
 }
 
-const config = JSON.parse(readFileSync(join(ROOT, "src-tauri", "tauri.conf.json"), "utf8"))
-const version = config.version
 const sigFile = `${installer}.sig`
 const sigPath = join(BUNDLE, sigFile)
 if (!existsSync(sigPath)) {

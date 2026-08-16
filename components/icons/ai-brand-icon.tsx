@@ -24,19 +24,19 @@ export const AI_BRAND_ICONS = {
     light: "/icons/ai/grok-light.svg",
     dark: "/icons/ai/grok-dark.svg",
   },
-  // Domestic (China) brand tiles
+  // Domestic (China) brand marks — official logos from the vendors' own sites
   deepseek: "/icons/ai/deepseek.svg",
-  glm: "/icons/ai/glm.svg",
-  yuanbao: "/icons/ai/yuanbao.svg",
-  doubao: "/icons/ai/doubao.svg",
-  kimi: "/icons/ai/kimi.svg",
+  glm: "/icons/ai/glm.png",
+  yuanbao: "/icons/ai/yuanbao.png",
+  doubao: "/icons/ai/doubao.png",
+  kimi: "/icons/ai/kimi.png",
   tongyi: "/icons/ai/tongyi.svg",
-  wenxin: "/icons/ai/wenxin.svg",
-  spark: "/icons/ai/spark.svg",
-  sensechat: "/icons/ai/sensechat.svg",
-  hailiao: "/icons/ai/hailiao.svg",
-  tiangong: "/icons/ai/tiangong.svg",
-  metaso: "/icons/ai/metaso.svg",
+  wenxin: "/icons/ai/wenxin.png",
+  spark: "/icons/ai/spark.png",
+  sensechat: "/icons/ai/sensechat.png",
+  hailiao: "/icons/ai/hailiao.png",
+  tiangong: "/icons/ai/tiangong.png",
+  metaso: "/icons/ai/metaso.png",
 } as const satisfies Record<string, AiIconSrc>
 
 export function resolveAiIconSrc(icon: AiIconSrc, isDark: boolean): string {

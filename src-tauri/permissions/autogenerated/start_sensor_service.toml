@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-start-sensor-service"
+description = "Enables the start_sensor_service command without any pre-configured scope."
+commands.allow = ["start_sensor_service"]
+
+[[permission]]
+identifier = "deny-start-sensor-service"
+description = "Denies the start_sensor_service command without any pre-configured scope."
+commands.deny = ["start_sensor_service"]

@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-geocode-city"
+description = "Enables the geocode_city command without any pre-configured scope."
+commands.allow = ["geocode_city"]
+
+[[permission]]
+identifier = "deny-geocode-city"
+description = "Denies the geocode_city command without any pre-configured scope."
+commands.deny = ["geocode_city"]

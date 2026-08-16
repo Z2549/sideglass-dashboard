@@ -2,7 +2,10 @@
   "$schema": "../gen/schemas/desktop-schema.json",
   "identifier": "default",
   "description": "Default window permissions",
-  "windows": ["main", "ai-hub"],
+  "windows": [
+    "main",
+    "ai-hub"
+  ],
   "permissions": [
     "core:default",
     "shell:allow-open",
@@ -27,6 +30,27 @@
     "window-state:default",
     "global-shortcut:default",
     "notification:default",
-    "updater:default"
+    "updater:default",
+    "allow-get-system-info",
+    "allow-fetch-ical",
+    "allow-open-url",
+    "allow-bilibili-search",
+    "allow-geocode-city",
+    "allow-reverse-geocode",
+    "allow-fetch-weather-forecast",
+    "allow-toggle-main-window",
+    "allow-set-autostart",
+    "allow-register-global-hotkey",
+    "allow-send-notification",
+    "allow-start-sensor-service",
+    "allow-check-for-updates",
+    "allow-install-update",
+    "allow-dismiss-pending-update",
+    "allow-restart-app",
+    "allow-toggle-immersive-fullscreen",
+    "allow-is-immersive-fullscreen",
+    "allow-open-ai-hub",
+    "allow-create-or-update-ai-webview",
+    "allow-take-ai-hub-pending-tab"
   ]
 }
