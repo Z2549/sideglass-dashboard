@@ -826,9 +826,6 @@
   overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior: contain;
-  /* Keep widgets clear of the AI dock at the bottom (dock height + breathing room) */
-  padding-bottom: clamp(4.25rem, 8.5vh, 6.5rem);
-  scrollbar-gutter: stable;
 }
 
 .dashboard-scroll--editing {
@@ -844,16 +841,16 @@
   --grid-cols: 1;
   display: grid;
   gap: clamp(0.25rem, 0.45vmin, 0.5rem);
-  min-height: 100%;
+  min-height: 0;
+  height: 100%;
   width: 100%;
   max-width: 100%;
   margin-inline: auto;
   padding: clamp(0.45rem, 1.3vmin, 0.9rem) clamp(0.6rem, 2vw, 1.5rem);
   grid-auto-flow: dense;
-  /* Rows never collapse below 2.25rem (short/narrow windows) but still stretch to
-     fill tall portrait monitors; the grid grows past the viewport when needed and
-     the scroll container takes over instead of widgets being covered or crushed. */
-  grid-auto-rows: minmax(2.25rem, 1fr);
+  /* Fill the viewport and let widgets scale with it (cqh-based content).
+     Short windows switch to a scrollable natural-height layout below. */
+  grid-auto-rows: minmax(0, 1fr);
   grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr));
   box-sizing: border-box;
 }
@@ -952,6 +949,21 @@
   .dashboard-grid {
     --grid-cols: 2;
     gap: clamp(0.3rem, 0.5vmin, 0.65rem);
+  }
+}
+
+/* Short windows: instead of crushing widgets into a few pixels, switch to
+   natural-height rows and let the page scroll, keeping clearance above the
+   AI dock so modules are never squeezed or covered. */
+@media (max-height: 700px) {
+  .dashboard-scroll {
+    padding-bottom: clamp(4.25rem, 8.5vh, 6.5rem);
+  }
+
+  .dashboard-grid {
+    height: auto;
+    min-height: 100%;
+    grid-auto-rows: minmax(1.6rem, auto);
   }
 }
 
